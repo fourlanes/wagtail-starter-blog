@@ -1,0 +1,13 @@
+venv/
+env/
+.env
+__pycache__
+/assets
+
+node_modules
+
+# Wagtail storage for uploads
+storage/*
+media
+
+.DS_Store
