@@ -1064,6 +1064,10 @@ section > .container-fluid {
     text-align: center;
   }
 }
+.menuzord-brand {
+  font-size: 28px;
+  font-weight: 700;
+}
 .menuzord-brand img {
   max-height: 38px;
 }
@@ -1110,7 +1114,7 @@ section > .container-fluid {
 /* -------- Menuzord ---------- */
 .menuzord-menu > li > a {
   color: #333333;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
 }
 .menuzord .menuzord-menu > li.active > a i,
