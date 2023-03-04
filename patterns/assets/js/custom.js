@@ -112,7 +112,6 @@ var THEMEMASCOT = {};
     THEMEMASCOT.documentOnReady = {
         init: function() {
             THEMEMASCOT.initialize.init();
-            THEMEMASCOT.windowOnscroll.init();
         }
     };
 

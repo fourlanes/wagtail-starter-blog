@@ -985,3 +985,12 @@ fieldset[disabled] .btn-theme-colored.focus {
 .icon-box.iconbox-theme-colored.iconbox-border {
   border-color: #002D62;
 }
+
+h3 a, h4 a, h5 a, h6 a, .h3 a, .h4 a, .h5 a, .h6 a {
+  color: #002D62;
+}
+
+a:hover, a:focus {
+  color: #FFAB00;
+  text-decoration: none;
+}
