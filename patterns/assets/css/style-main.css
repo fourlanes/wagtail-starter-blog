@@ -7029,3 +7029,7 @@ a.inPageNav__link {
 a.inPageNav__link.inPageNav__active {
     border-bottom: 2px solid;
 }
+
+.richtext-content p:first-child {
+  font-size: 2.14285714rem;
+}
