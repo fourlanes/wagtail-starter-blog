@@ -6995,3 +6995,37 @@ blockquote p {
     line-height: 1;
     transition: border .2s ease,color .2s ease;
 }
+
+/*
+* Heroes
+* --------------------------
+*/
+
+.hero__aside {
+    float: right;
+    width: 25%;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.inPageNav {
+    padding: 1rem;
+    background: #FFFFFF;
+}
+
+.inPageNav__item {
+    position: relative;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+}
+
+a.inPageNav__link {
+    color: #002D62;
+    display: block;
+    width: fit-content;
+}
+
+a.inPageNav__link.inPageNav__active {
+    border-bottom: 2px solid;
+}
