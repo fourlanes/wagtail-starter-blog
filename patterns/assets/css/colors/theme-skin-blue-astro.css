@@ -994,3 +994,7 @@ a:hover, a:focus, .footer a:focus, .footer a:hover, .footer a:active {
   color: #FFAB00;
   text-decoration: none;
 }
+
+a.inPageNav__link.inPageNav__active {
+  color: #FFAB00;
+}
