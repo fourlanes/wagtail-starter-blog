@@ -6891,6 +6891,9 @@ blockquote p {
   border-color: #eeeeee;
   color: #333333;
 }
+.footer .footer-nav__links a {
+  color: #FFFFFF;
+}
 /*
 * Contact Block
 * --------------------------

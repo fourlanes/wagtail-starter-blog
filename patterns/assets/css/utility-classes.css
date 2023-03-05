@@ -1017,4 +1017,6 @@ footer.bg-deep {
   }
 }
 
-/*# sourceMappingURL=utility-classes.css.map */
+.inline-flex {
+  display: inline-flex;
+}
