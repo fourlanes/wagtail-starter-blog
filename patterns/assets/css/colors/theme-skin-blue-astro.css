@@ -20,6 +20,9 @@ COLOR CODE: #002D62
 .bg-theme-colored {
   background-color: #002D62 !important;
 }
+.bg-theme-colored-secondary {
+  background-color: #FFAB00 !important;
+}
 .bg-theme-colored-lighter2 {
   background-color: #0066b2 !important;
 }
