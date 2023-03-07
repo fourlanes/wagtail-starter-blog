@@ -6686,8 +6686,9 @@ blockquote p {
 }
 .widget .tags a {
   border: 1px solid #ddd;
+  border-radius: 5px;
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   margin: 5px 4px 5px -2px;
   padding: 5px 10px;
 }

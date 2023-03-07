@@ -999,7 +999,7 @@ h3 a, h4 a, h5 a, h6 a, .h3 a, .h4 a, .h5 a, .h6 a {
 }
 
 a:hover, a:focus, .footer a:focus, .footer a:hover, .footer a:active {
-  color: #FFAB00 !important;
+  color: #FFAB00;
   text-decoration: none;
 }
 
