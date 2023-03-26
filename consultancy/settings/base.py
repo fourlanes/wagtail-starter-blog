@@ -165,14 +165,10 @@ WAGTAILADMIN_BASE_URL = "https://line23.co"
 
 # Email Settings
 
-EMAIL_BACKEND = config(
-    "EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend"
-)
+EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend")
 EMAIL_HOST = config("EMAIL_HOST", default="smtp.gmail.com")
 EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="info.suma.ug@gmail.com")
-EMAIL_HOST_PASSWORD = config(
-    "EMAIL_HOST_PASSWORD", default="tllmnuoduurinoib"  # this is an app password
-)
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="tllmnuoduurinoib")  # this is an app password
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="info.suma.ug@gmail.com")

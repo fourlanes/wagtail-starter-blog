@@ -1,4 +1,5 @@
-from .base import *
+from .base import *  # noqa: F401, F403
+from decouple import config
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -9,12 +10,10 @@ SECRET_KEY = "django-insecure-hq(!b9@#*4ya&km-owj_n2_=@)ou2d#ut@g-gv14zg4n$@+&il
 # SECURITY WARNING: define the correct hosts in production!
 ALLOWED_HOSTS = ["*"]
 
-EMAIL_BACKEND = config(
-    "EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
-)
+EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend")
 
 
 try:
-    from .local import *
+    from .local import *  # noqa: F403,F401
 except ImportError:
     pass
