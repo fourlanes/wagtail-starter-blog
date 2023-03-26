@@ -38,6 +38,9 @@
 
         {% block content %}{% endblock %}
 
+        {% block html_footer %}
+            {% include 'partials/scaffold/footer-assets.html' %}
+        {% endblock %}
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/consultancy.js' %}"></script>
 
