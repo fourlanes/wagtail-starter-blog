@@ -27,6 +27,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 INSTALLED_APPS = [
     "home",
+    "common",
     "search",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -86,9 +87,7 @@ WSGI_APPLICATION = "consultancy.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    "default": dj_database_url.config(default=config("DATABASE_URL"))
-}
+DATABASES = {"default": dj_database_url.config(default=config("DATABASE_URL"))}
 
 
 # Password validation
@@ -166,10 +165,14 @@ WAGTAILADMIN_BASE_URL = "https://line23.co"
 
 # Email Settings
 
-EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend")
+EMAIL_BACKEND = config(
+    "EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend"
+)
 EMAIL_HOST = config("EMAIL_HOST", default="smtp.gmail.com")
 EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="info.suma.ug@gmail.com")
-EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="tllmnuoduurinoib")  # this is an app password
+EMAIL_HOST_PASSWORD = config(
+    "EMAIL_HOST_PASSWORD", default="tllmnuoduurinoib"  # this is an app password
+)
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="info.suma.ug@gmail.com")
