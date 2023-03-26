@@ -36,6 +36,10 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
+        {% block header %}
+            {% include 'partials/scaffold/header.html' %}
+        {% endblock %}
+
         {% block content %}{% endblock %}
 
         {% block html_footer %}
