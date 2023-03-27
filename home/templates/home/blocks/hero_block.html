@@ -1,0 +1,26 @@
+{% load wagtailimages_tags %}
+
+{% image self.image fill-1512x772-c100 as image %}
+<section id="home" class="divider layer-overlay overlay-theme-colored" data-bg-img="{{image.url}}">
+    <div class="display-table">
+        <div class="display-table-cell">
+            <div class="container pt-200 pb-200">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bg-lightest-transparent text-right pt-60 pb-60">
+                            <h1 class="text-white text-uppercase font-60 mb-0">
+                                Your <span class="text-theme-colored-secondary">Technology Partner</span> for
+                                Good
+                            </h1>
+
+                            <h4 class="text-white font-weight-400 mt-0 w-full">
+                                A web development, data visualisation and agile consultancy for
+                                non-profits and good causes.
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
