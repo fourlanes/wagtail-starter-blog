@@ -1,0 +1,42 @@
+from django.utils.translation import gettext_lazy
+
+from wagtailmetadata.models import MetadataPageMixin
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+
+
+class CustomMetadataPageMixin(MetadataPageMixin):
+    class Meta:
+        abstract = True
+
+    promote_panels = [
+        MultiFieldPanel(
+            [
+                FieldPanel("slug"),
+                FieldPanel("seo_title"),
+                FieldPanel("search_description"),
+                FieldPanel("search_image"),
+            ],
+            gettext_lazy("For Search Engines"),
+        ),
+        MultiFieldPanel(
+            [
+                FieldPanel("show_in_menus"),
+            ],
+            gettext_lazy("For Site Menus"),
+        ),
+    ]
+
+    def get_meta_image(self):
+        if getattr(self.specific, "search_image", None):
+            return self.specific.search_image
+        elif getattr(self.specific, "hero_image", None):
+            return self.specific.hero_image
+        return super(CustomMetadataPageMixin, self).get_meta_image()
+
+    def get_meta_description(self):
+        return self.search_description if self.search_description else self.seo_title or self.title
+
+    def get_meta_title(self):
+        site = self.get_site
+        site_name = site.site_name if hasattr(site, "site_name") else "SUMA"
+        return "%s - %s" % (self.seo_title if self.seo_title else self.title, site_name)

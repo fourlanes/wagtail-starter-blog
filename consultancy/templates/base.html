@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static wagtailcore_tags wagtailuserbar wagtailmetadata_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +13,11 @@
             {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
             {% endblock %}
         </title>
-        <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {% block metadata %}
+            {% meta_tags %}
+        {% endblock %}
 
         {# Force all links in the live preview panel to be opened in a new tab #}
         {% if request.in_preview_panel %}
