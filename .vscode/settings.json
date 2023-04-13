@@ -1,6 +1,7 @@
 {
   "python.formatting.provider": "black",
   "editor.formatOnSave": true,
+  "python.languageServer": "Pylance",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -8,6 +9,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
+    "editor.formatOnSave": true
+  },
+  "[django-html]": {
     "editor.formatOnSave": true
   },
 }

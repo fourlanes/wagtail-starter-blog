@@ -1,4 +1,4 @@
-from wagtail.blocks import ChoiceBlock, StreamBlock, StructBlock, TextBlock
+from wagtail.blocks import ChoiceBlock, StreamBlock, StructBlock, TextBlock, EmailBlock, CharBlock
 from wagtail.images.blocks import ImageChooserBlock
 
 
@@ -34,7 +34,21 @@ class HeroBlock(StructBlock):
         icon = "image"
 
 
+class ContactUsBlock(StructBlock):
+    heading = TextBlock()
+    sub_heading = TextBlock(label="Sub-Heading")
+    photo = ImageChooserBlock(required=False)
+    email = EmailBlock()
+    phone_number = CharBlock(max_length=20, label="Phone Number")
+
+    class Meta:
+        template = "home/blocks/contact_us_block.html"
+        icon = "mail"
+        label = "Contact Us"
+
+
 class HomeContentStreamBlock(StreamBlock):
     hero = HeroBlock()
+    contact_us = ContactUsBlock()
 
     required = True
