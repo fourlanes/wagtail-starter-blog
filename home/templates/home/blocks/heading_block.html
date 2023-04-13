@@ -1,0 +1,14 @@
+
+{% if self.heading == 'h1' %}
+    <h1 class="text-white text-uppercase font-60 mb-0">
+        {{self.text}}
+    </h1>
+{% elif self.heading == 'h4' %}
+    <h4 class="text-white font-weight-400 mt-0 w-full">
+        {{self.text}}
+    </h4>
+{% else %}
+    <{{self.heading}} class="text-white">
+        {{self.text}}
+    </{{self.heading}}>
+{% endif %}

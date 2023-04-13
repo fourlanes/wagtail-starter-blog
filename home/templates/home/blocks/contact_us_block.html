@@ -1,0 +1,32 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<section class="divider layer-overlay overlay-light">
+    <div class="container">
+        <div class="section-content text-left">
+            <div class="row">
+                <div class="col-md-12">
+                    {% if self.heading %}
+                        <h2 class="mt-0 text-theme-colored">{{self.heading}}</h2>
+                    {% endif %}
+                    {% if self.sub_heading %}
+                        <h4>{{self.sub_heading}}</h4>
+                    {% endif %}
+                    <div class="contact-block">
+                        {% if self.photo %}
+                        <div class="contact-block__image">
+                            {% image self.photo width-800 format-webp as photo %}
+                            <img alt="{{photo.alt}}" class="avatar__image img-circle" src="{{photo.url}}" width="100px" />
+                        </div>
+                        {% endif %}
+                        <div class="contact-block__content {% if not self.photo %}pl-0{% endif %}">
+                            <h4 class="mb-0"><a href="mailto:{{self.email}}"
+                                    class="contact-block__email">{{self.email}}</a></h4>
+                            <a href="tel://{{self.phone_number}}"
+                                class="contact-block__number text-theme-colored-secondary">{{self.phone_number}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,19 @@
+{% load navigation_tags %}
+{% get_site_root as site_root %}
+
+<div id="wrapper" class="clearfix">
+    <header id="header" class="header">
+        <div class="header-nav">
+            <div class="header-nav-wrapper navbar-scrolltofixed bg-silver-light">
+                <div class="container">
+                    <nav id="menuzord-right" class="menuzord default no-bg">
+                        <a class="menuzord-brand pull-left flip" href="index-mp-layout1.html">
+                            LINE <span class="text-theme-colored">23</span>
+                        </a>
+                        {% primary_menu parent=site_root calling_page=self %}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>

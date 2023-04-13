@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static wagtailcore_tags wagtailuserbar wagtailmetadata_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,13 +13,20 @@
             {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
             {% endblock %}
         </title>
-        <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {% block metadata %}
+            {% meta_tags %}
+        {% endblock %}
 
         {# Force all links in the live preview panel to be opened in a new tab #}
         {% if request.in_preview_panel %}
         <base target="_blank">
         {% endif %}
+
+        {% block html_header %}
+            {% include 'partials/scaffold/header-assets.html' %}
+        {% endblock %}
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/consultancy.css' %}">
@@ -32,8 +39,19 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
+        {% block header %}
+            {% include 'partials/scaffold/header.html' %}
+        {% endblock %}
+
         {% block content %}{% endblock %}
 
+        {% block footer %}
+            {% include 'partials/scaffold/footer.html' %}
+        {% endblock footer %}
+
+        {% block html_footer %}
+            {% include 'partials/scaffold/footer-assets.html' %}
+        {% endblock %}
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/consultancy.js' %}"></script>
 

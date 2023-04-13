@@ -1,0 +1,8 @@
+{% load wagtailcore_tags navigation_tags %}
+
+<ul class="menuzord-menu onepage-nav menuzord-right">
+    <li {% if parent.url_path == self.url_path %}class="active"{% endif %}><a href="/">Home</a></li>
+    {% for item in menu_items %}
+        <li {% if item.active %}class="active"{% endif %}><a href="{% pageurl item %}">{{item.title}}</a></li>
+    {% endfor %}
+</ul>

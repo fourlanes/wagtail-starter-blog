@@ -1,4 +1,5 @@
-from .base import *
+from .base import *  # noqa: F401, F403
+from decouple import config
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -13,6 +14,6 @@ EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.conso
 
 
 try:
-    from .local import *
+    from .local import *  # noqa: F403,F401
 except ImportError:
     pass

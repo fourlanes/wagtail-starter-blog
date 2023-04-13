@@ -27,6 +27,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 INSTALLED_APPS = [
     "home",
+    "common",
     "search",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -39,6 +40,9 @@ INSTALLED_APPS = [
     "wagtail.search",
     "wagtail.admin",
     "wagtail",
+    "wagtail.contrib.styleguide",
+    "wagtail.contrib.routable_page",
+    "wagtailmetadata",
     "modelcluster",
     "taggit",
     "django.contrib.admin",
@@ -50,6 +54,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -75,6 +80,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "consultancy.context.globals",
             ],
         },
     },
@@ -86,9 +92,7 @@ WSGI_APPLICATION = "consultancy.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    "default": dj_database_url.config(default=config("DATABASE_URL"))
-}
+DATABASES = {"default": dj_database_url.config(default=config("DATABASE_URL"))}
 
 
 # Password validation
@@ -133,6 +137,7 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "patterns/assets"),
     os.path.join(PROJECT_DIR, "static"),
 ]
 
