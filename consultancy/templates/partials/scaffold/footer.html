@@ -1,18 +1,19 @@
-{% load wagtailcore_tags navigation_tags %}
+{% load wagtailcore_tags navigation_tags footer_tags %}
 
+{% contact_us_footer %}
 <footer id="footer" class="footer pb-0 bg-theme-colored">
-    <div class="container footer-nav bg-theme-colored p-20">
-        <div class="row text-left">
-            <div class="col-md-12 inline-flex font-12">
-                <p class="text-white m-0 mr-50">Copyright <b>LINE 23</b> {% now "Y" %}</p>
-                <div class="footer-nav__links">
-                    <ul class="inline-flex">
-                        {% for item in menu_items %}
-                            <li><a href="{% pageurl item %}" class="mr-20">{{item.title}}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+  <div class="container footer-nav bg-theme-colored p-20">
+    <div class="row text-left">
+      <div class="col-md-12 inline-flex font-12">
+        <p class="text-white m-0 mr-50">Copyright <b>LINE 23</b> {% now "Y" %}</p>
+        <div class="footer-nav__links">
+          <ul class="inline-flex">
+            {% for item in menu_items %}
+            <li><a href="{% pageurl item %}" class="mr-20">{{item.title}}</a></li>
+            {% endfor %}
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
 </footer>
