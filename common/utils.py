@@ -1,5 +1,7 @@
 from django.db import models
 
+from wagtail.admin.panels import FieldPanel
+
 
 def ForeignKeyField(
     model=None, required=False, on_delete=models.SET_NULL, related_name="+", **kwargs
@@ -14,3 +16,7 @@ def ForeignKeyField(
 
 def WagtailImageField(required=False, **kwargs) -> models.ForeignKey:
     return ForeignKeyField(model="wagtailimages.Image", required=required, **kwargs)
+
+
+def ContactUsFooterPanels():
+    return FieldPanel("show_contact_us_footer")

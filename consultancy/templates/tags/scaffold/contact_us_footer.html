@@ -1,5 +1,6 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
+{% if self %}
 <section class="divider layer-overlay overlay-light">
     <div class="container">
         <div class="section-content text-left">
@@ -32,3 +33,4 @@
         </div>
     </div>
 </section>
+{% endif %}
