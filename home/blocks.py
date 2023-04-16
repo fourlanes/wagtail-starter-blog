@@ -1,14 +1,20 @@
-from wagtail.blocks import ListBlock, StreamBlock
+from wagtail.blocks import ListBlock, StreamBlock, StructBlock
+from wagtail.images.blocks import ImageChooserBlock
 
-from common.blocks import ContactUsBlock, HeroBlock as CommonHeroBlock, HeadingBlock
+from common.blocks import ContactUsBlock, HeadingBlock
 
 
-class HeroBlock(CommonHeroBlock):
+class HeroBlock(StructBlock):
+    image = ImageChooserBlock()
     content = ListBlock(HeadingBlock(template="home/blocks/heading_block.html"))
+
+    class Meta:
+        template = "home/blocks/hero_block.html"
+        icon = "image"
 
 
 class HomeContentStreamBlock(StreamBlock):
-    hero = HeroBlock(template="home/blocks/hero_block.html")
+    hero = HeroBlock()
     contact_us = ContactUsBlock()
 
     required = True

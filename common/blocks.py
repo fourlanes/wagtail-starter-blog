@@ -37,7 +37,7 @@ class HeroContent(StreamBlock):
 
 
 class HeroBlock(StructBlock):
-    image = ImageChooserBlock()
+    image = ImageChooserBlock(required=False)
     content = ListBlock(HeadingBlock())
 
     class Meta:
