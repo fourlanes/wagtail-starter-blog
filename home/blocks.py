@@ -1,4 +1,4 @@
-from wagtail.blocks import ChoiceBlock, StreamBlock, StructBlock, TextBlock, EmailBlock, CharBlock
+from wagtail.blocks import CharBlock, ChoiceBlock, EmailBlock, ListBlock, StreamBlock, StructBlock, TextBlock
 from wagtail.images.blocks import ImageChooserBlock
 
 
@@ -12,7 +12,18 @@ class HeadingBlock(StructBlock):
             ("h4", "Heading 4"),
         ),
     )
-    text = TextBlock()
+    text = StreamBlock(
+        [
+            (
+                "simple_text",
+                StructBlock([("text", TextBlock(required=False, label="Text"))], icon="title", label="Simple Text"),
+            ),
+            (
+                "styled_text",
+                StructBlock([("text", TextBlock(required=False, label="Text"))], icon="title", label="Styled Text"),
+            ),
+        ],
+    )
 
     class Meta:
         template = "home/blocks/heading_block.html"
@@ -27,7 +38,7 @@ class HeroContent(StreamBlock):
 
 class HeroBlock(StructBlock):
     image = ImageChooserBlock()
-    content = HeroContent()
+    content = ListBlock(HeadingBlock())
 
     class Meta:
         template = "home/blocks/hero_block.html"
