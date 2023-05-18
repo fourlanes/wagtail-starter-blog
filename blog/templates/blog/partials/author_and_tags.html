@@ -4,7 +4,7 @@
 <div class="author-details media-post {{class}}">
   {% if self.author.author_photo %}
     <a href="#" class="post-thumb mb-0 pull-left flip pr-20">
-        {% image self.author.author_photo fill-110x110 as photo %}
+        {% image self.author.author_photo fill-110x110 format-webp-lossless as photo %}
         <img class="img-thumbnail" alt="{{photo.alt}}" src="{{photo.url}}">
     </a>
   {% endif %}
