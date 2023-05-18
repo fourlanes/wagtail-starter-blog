@@ -1,0 +1,7 @@
+{% for block in self.text %}
+  {% if block.block_type == 'simple_text' %}
+    {{block.value.text}}
+  {% elif block.block_type == 'styled_text' %}
+    <span class="text-theme-colored-secondary">{{block.value.text}}</span>
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,18 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<section class="clients">
+  <div class="container pt-0 pb-0">
+      <h2 class="line-bottom mt-0 text-theme-colored">{{self.heading}}</h2>
+      <div class="row clients-logo transparent text-center">
+        {% for client in self.clients %}
+        <div class="item col-xs-6 col-sm-4 col-md-3 col-lg-2">
+          {% if client.website %}
+            <a href="{{client.website}}">{% image client.logo max-600x400 %}</a>
+          {% else %}
+            <span>{% image client.logo max-600x400 %}</span>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+  </div>
+</section>

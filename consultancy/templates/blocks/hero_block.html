@@ -1,0 +1,35 @@
+{% load wagtailcore_tags %}
+
+<section class="hero divider bg-theme-colored">
+  <div class="display-table">
+      <div class="display-table-cell">
+          <div class="container pt-100 pb-100">
+              <div class="row pt-60 pb-60">
+                  <div class="col-md-8 hero__caption">
+                      <div class="bg-lightest-transparent text-left">
+                        {% for block in self.content %}
+                          {% include_block block %}
+                        {% endfor %}
+                      </div>
+                  </div>
+
+                  {% if page.sections|length %}
+
+                  <div class="col-md-4 hero__aside">
+                    <ul class="inPageNav">
+                      {% for item in page.sections %}
+                        <li class="inPageNav__item">
+                          <a href="#{{item.value.anchor_id}}" class="inPageNav__link">
+                              {{item.value.name}}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+
+                  {% endif %}
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

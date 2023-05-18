@@ -1,0 +1,21 @@
+.hide {
+  visibility: hidden;
+  height: 0;
+}
+
+.clients-logo .item {
+  display: flex;
+  height: 100px;
+}
+
+.clients-logo .item a,
+.clients-logo .item span {
+  display: block;
+  margin: auto;
+}
+
+.clients-logo img {
+  height: auto;
+  max-height: 100px;
+  opacity: 1;
+}

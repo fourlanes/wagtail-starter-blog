@@ -1,3 +1,4 @@
+from django.db import models
 from django.utils.translation import gettext_lazy
 
 from wagtailmetadata.models import MetadataPageMixin
@@ -40,3 +41,14 @@ class CustomMetadataPageMixin(MetadataPageMixin):
         site = self.get_site
         site_name = site.site_name if hasattr(site, "site_name") else "SUMA"
         return "%s - %s" % (self.seo_title if self.seo_title else self.title, site_name)
+
+
+class ContactUsFooterMixin(models.Model):
+    class Meta:
+        abstract = True
+
+    show_contact_us_footer = models.BooleanField(
+        default=True,
+        verbose_name="Show Contact Us Footer",
+        help_text="Useful when u want to use the Contact Us Block for a custom contact",
+    )
