@@ -12,6 +12,22 @@
                         {% endfor %}
                       </div>
                   </div>
+
+                  {% if page.sections|length %}
+
+                  <div class="col-md-4 hero__aside">
+                    <ul class="inPageNav">
+                      {% for item in page.sections %}
+                        <li class="inPageNav__item">
+                          <a href="#{{item.value.anchor_id}}" class="inPageNav__link">
+                              {{item.value.name}}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+
+                  {% endif %}
               </div>
           </div>
       </div>

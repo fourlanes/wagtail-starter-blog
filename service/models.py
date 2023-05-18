@@ -1,4 +1,5 @@
 from django.db import models  # noqa: F401
+from django.utils.functional import cached_property
 
 from wagtail.models import Page
 from wagtail.fields import StreamField
@@ -34,3 +35,11 @@ class ServicePage(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
         FieldPanel("content"),
         ContactUsFooterPanels(),
     ]
+
+    @cached_property
+    def sections(self):
+        sections = []
+        for block in self.content:
+            if block.block_type == "anchor":
+                sections.append(block)
+        return sections
