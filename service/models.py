@@ -3,6 +3,7 @@ from django.db import models  # noqa: F401
 from wagtail.models import Page
 from wagtail.fields import StreamField
 from wagtail.admin.panels import FieldPanel
+from wagtail.blocks import RichTextBlock
 
 from common.mixins import ContactUsFooterMixin, CustomMetadataPageMixin
 from common.utils import ContactUsFooterPanels
@@ -18,7 +19,14 @@ class ServicePage(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
     subpage_type = ["service.ServicePage"]
 
     content = StreamField(
-        [("hero", HeroBlock()), ("contact_us", ContactUsBlock())], use_json_field=True, null=True, blank=False
+        [
+            ("hero", HeroBlock()),
+            ("contact_us", ContactUsBlock()),
+            ("richtext", RichTextBlock(template="service/blocks/richtext.html")),
+        ],
+        use_json_field=True,
+        null=True,
+        blank=False,
     )
 
     content_panels = Page.content_panels + [
