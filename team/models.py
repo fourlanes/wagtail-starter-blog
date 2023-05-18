@@ -4,6 +4,8 @@ from wagtail.snippets.models import register_snippet
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.search import index
 
+from common.utils import WagtailImageField
+
 
 AUTHOR_CHOICES = (
     ("author_name", "Author name"),
@@ -22,6 +24,7 @@ class Author(index.Indexed, models.Model):
         choices=AUTHOR_CHOICES,
         default=AUTHOR_CHOICES[0][0],
     )
+    author_photo = WagtailImageField()
     author_name = models.CharField(
         max_length=255,
         blank=True,
@@ -39,6 +42,7 @@ class Author(index.Indexed, models.Model):
 
     panels = [
         FieldPanel("author_type"),
+        FieldPanel("author_photo"),
         MultiFieldPanel(
             [
                 FieldPanel("author_name"),
