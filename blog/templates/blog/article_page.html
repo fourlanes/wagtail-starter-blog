@@ -10,6 +10,17 @@
 {% block content %}
 
 <div class="main-content">
+    <section class="hero inner-header divider">
+      <div class="container pt-50 pb-50">
+          <div class="section-content pt-50">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h1 class="font-50 text-theme-colored">{{page.title}}</h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
     {% for block in page.content %}
         {% include_block block %}
     {% endfor %}
