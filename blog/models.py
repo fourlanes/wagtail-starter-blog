@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models  # noqa: F401
 
 from modelcluster.fields import ParentalKey
@@ -9,7 +11,7 @@ from wagtail.admin.panels import FieldPanel
 from wagtail.snippets.models import register_snippet
 
 from common.mixins import ContactUsFooterMixin, CustomMetadataPageMixin
-from common.utils import ContactUsFooterPanels, WagtailImageField
+from common.utils import ContactUsFooterPanels, ForeignKeyField, WagtailImageField
 
 
 @register_snippet
@@ -51,9 +53,22 @@ class ArticlePage(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
 
     hero_image = WagtailImageField(verbose_name="Hero Image")
     topics = ClusterTaggableManager(through=Topic, blank=True)
+    author = ForeignKeyField(model="team.Author")
+    published_date = models.DateTimeField(
+        blank=True,
+        null=True,
+        help_text="This date will be used for display and ordering",
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel("hero_image"),
         FieldPanel("topics"),
+        FieldPanel("author"),
+        FieldPanel("published_date"),
         ContactUsFooterPanels(),
     ]
+
+    def save(self, *args, **kwargs):
+        if not self.published_date:
+            self.published_date = datetime.datetime.now()
+        super().save(*args, **kwargs)
