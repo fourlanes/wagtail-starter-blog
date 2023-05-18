@@ -56,3 +56,12 @@ class ContactUsBlock(StructBlock):
         template = "blocks/contact_us_block.html"
         icon = "mail"
         label = "Contact Us"
+
+
+class AnchorBlock(StructBlock):
+    anchor_id = CharBlock(required=True, help_text="The unique indentifier for this anchor")
+    name = CharBlock(required=False, help_text="Used on the navigation link (if used)")
+
+    class Meta:
+        icon = "thumbtack"
+        template = "blocks/anchor_block.html"

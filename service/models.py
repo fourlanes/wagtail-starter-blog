@@ -7,7 +7,7 @@ from wagtail.blocks import RichTextBlock
 
 from common.mixins import ContactUsFooterMixin, CustomMetadataPageMixin
 from common.utils import ContactUsFooterPanels
-from common.blocks import ContactUsBlock, HeroBlock
+from common.blocks import AnchorBlock, ContactUsBlock, HeroBlock
 
 
 class ServicePage(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
@@ -23,6 +23,7 @@ class ServicePage(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
             ("hero", HeroBlock()),
             ("contact_us", ContactUsBlock()),
             ("richtext", RichTextBlock(template="service/blocks/richtext.html")),
+            ("anchor", AnchorBlock()),
         ],
         use_json_field=True,
         null=True,
