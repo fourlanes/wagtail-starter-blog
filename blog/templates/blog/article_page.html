@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+
+{% block content %}
+
+<div class="main-content">
+    {% for block in page.content %}
+        {% include_block block %}
+    {% endfor %}
+</div>
+
+{% endblock content %}
