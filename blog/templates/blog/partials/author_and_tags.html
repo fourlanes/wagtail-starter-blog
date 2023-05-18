@@ -1,0 +1,31 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% if self.author %}
+<div class="author-details media-post {{class}}">
+  {% if self.author.author_photo %}
+    <a href="#" class="post-thumb mb-0 pull-left flip pr-20">
+        {% image self.author.author_photo fill-110x110 as photo %}
+        <img class="img-thumbnail" alt="{{photo.alt}}" src="{{photo.url}}">
+    </a>
+  {% endif %}
+
+  <div class="post-right">
+      <h5 class="post-title mt-0 mb-0"><a href="#" class="font-18 text-theme-colored">{{self.author.author_name}}</a></h5>
+      <p class="text-theme-colored-secondary text-capitalize">
+          {{self.author.author_credential}}
+          <span class="text-gray-darkgray font-12 ml-5">{{ self.published_date | date:'d M Y' }}<span>
+      </p>
+
+      {% if topics %}
+        <div class="widget">
+          <div class="tags">
+            {% for topic in topics %}
+              <a href="{% pageurl self %}?topic={{topic.slug}}" class="font-12">{{topic}}</a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+  </div>
+  <div class="clearfix"></div>
+</div>
+{% endif %}

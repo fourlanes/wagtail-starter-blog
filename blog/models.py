@@ -72,3 +72,10 @@ class ArticlePage(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
         if not self.published_date:
             self.published_date = datetime.datetime.now()
         super().save(*args, **kwargs)
+
+    def get_context(self, request):
+        context = super(ArticlePage, self).get_context(request)
+
+        context["topics"] = [topic for topic in self.topics.all()]
+
+        return context

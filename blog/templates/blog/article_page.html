@@ -21,6 +21,20 @@
           </div>
       </div>
     </section>
+
+    <section>
+      <div class="container mt-10 mb-30 pt-10 pb-30">
+          <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                  <div class="blog-posts single-post">
+                      {% include 'blog/partials/author_and_tags.html' with class="mb-20" %}
+                      {% comment %} Article Goes Here {% endcomment %}
+                      {% include 'blog/partials/author_and_tags.html' with class="mt-20" %}
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
     {% for block in page.content %}
         {% include_block block %}
     {% endfor %}
