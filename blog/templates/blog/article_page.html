@@ -30,11 +30,9 @@
                       {% include 'blog/partials/author_and_tags.html' with class="mb-20" %}
 
                       <article class="post clearfix mb-0">
-                        <div class="entry-content font-17 text-black-333">
-                          {% for block in page.content %}
-                            {% include_block block %}
-                          {% endfor %}
-                        </div>
+                        {% for block in page.content %}
+                          {% include_block block %}
+                        {% endfor %}
                     </article>
 
                       {% include 'blog/partials/author_and_tags.html' with class="mt-20" %}
