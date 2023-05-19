@@ -61,9 +61,9 @@ class BlogListing(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
 
 class ArticlePage(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
     class Meta:
-        verbose_name = "Article Page"
+        verbose_name = "Blog Article"
 
-    parent_page_types = ["blog.BlogListing", "work.WorkListing"]
+    parent_page_types = ["blog.BlogListing"]
 
     hero_image = WagtailImageField(verbose_name="Hero Image")
     topics = ClusterTaggableManager(through=Topic, blank=True)
