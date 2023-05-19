@@ -20,7 +20,7 @@
         <div class="widget">
           <div class="tags">
             {% for topic in topics %}
-              <span class="font-12">{{topic}}</span>
+              <a href="{% pageurl self.get_parent %}?topic={{topic.slug}}" class="font-12">{{topic}}</a>
             {% endfor %}
           </div>
         </div>
