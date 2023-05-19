@@ -12,6 +12,7 @@ from wagtail.snippets.models import register_snippet
 
 from common.mixins import ContactUsFooterMixin, CustomMetadataPageMixin
 from common.utils import ContactUsFooterPanels, ForeignKeyField, WagtailImageField
+from blog.blocks import content_streamfield
 
 
 @register_snippet
@@ -59,12 +60,14 @@ class ArticlePage(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
         null=True,
         help_text="This date will be used for display and ordering",
     )
+    content = content_streamfield()
 
     content_panels = Page.content_panels + [
         FieldPanel("hero_image"),
         FieldPanel("topics"),
         FieldPanel("author"),
         FieldPanel("published_date"),
+        FieldPanel("content"),
         ContactUsFooterPanels(),
     ]
 
