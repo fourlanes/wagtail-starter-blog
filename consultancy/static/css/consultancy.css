@@ -61,6 +61,12 @@ article .entry-content a {
   width: 100%;
 }
 
+@media (max-width: 1200px) {
+  .media-figure img {
+    height: auto;
+  }
+}
+
 .media-figure.wide img {
   display: block;
   margin-bottom: 0.5em;
