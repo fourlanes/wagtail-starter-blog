@@ -31,9 +31,20 @@
         </div>
     </div>
   </section>
-    {% for block in page.content %}
-        {% include_block block %}
-    {% endfor %}
+
+  <section id="blog">
+    <div class="container">
+      <div class="section-content">
+        <div class="row">
+
+          {% for item in page.get_children.specific %}
+            {% include 'work/partials/article-card.html' %}
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 {% endblock content %}
