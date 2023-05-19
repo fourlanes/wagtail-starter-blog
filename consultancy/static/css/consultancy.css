@@ -19,3 +19,28 @@
   max-height: 100px;
   opacity: 1;
 }
+
+/* === RICHTEXT === */
+
+article .entry-content > h2,
+article .entry-content > h3,
+article .entry-content > h4 {
+  color: #002d62;
+}
+
+article .entry-content ol {
+  list-style-position: outside;
+  list-style-type: decimal;
+  padding-left: 2.5em;
+}
+
+article .entry-content ul {
+  list-style-position: outside;
+  list-style-type: disc;
+  padding-left: 2.5em;
+}
+
+article .entry-content a {
+  color: #ffab00;
+  text-decoration: underline;
+}
