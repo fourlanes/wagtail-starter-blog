@@ -8,13 +8,13 @@ class RichText(StructBlock):
     class Meta:
         template = "blocks/rich_text.html"
 
-    rich_text = RichTextBlock()
+    rich_text = RichTextBlock(features=STREAMFIELD_RICHTEXT_FEATURES)
 
 
 def content_streamfield(blank=False, null=True):
     return StreamField(
         [
-            ("rich_text", RichText(features=STREAMFIELD_RICHTEXT_FEATURES)),
+            ("rich_text", RichText()),
         ],
         blank=blank,
         null=null,
