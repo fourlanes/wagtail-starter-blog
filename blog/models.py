@@ -31,7 +31,7 @@ class ArticleTopic(TagBase):
 
 class Topic(TaggedItemBase):
     tag = models.ForeignKey(ArticleTopic, related_name="tagged_article", on_delete=models.CASCADE)
-    content_object = ParentalKey(Page, on_delete=models.CASCADE, related_name="page_topics")
+    content_object = ParentalKey("blog.ArticlePage", on_delete=models.CASCADE, related_name="page_topics")
 
 
 class BlogListing(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
