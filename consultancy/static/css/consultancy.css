@@ -22,6 +22,11 @@
 
 /* === RICHTEXT === */
 
+.post .entry-content {
+  background: #fff;
+  padding: 0;
+}
+
 article .entry-content > h2,
 article .entry-content > h3,
 article .entry-content > h4 {
@@ -41,6 +46,29 @@ article .entry-content ul {
 }
 
 article .entry-content a {
+  color: #ffab00;
+  text-decoration: underline;
+}
+
+.media-figure {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.media-figure img {
+  display: block;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+.media-figure.wide img {
+  display: block;
+  margin-bottom: 0.5em;
+  width: 100%;
+  height: auto;
+}
+
+.media-caption a {
   color: #ffab00;
   text-decoration: underline;
 }

@@ -52,5 +52,6 @@ def globals(request):
             "is_home": is_home,
             "site_name": Site.find_for_request(request).site_name or settings.WAGTAIL_SITE_NAME,
             "html_title": html_title,
+            "image_srcs": "width-270 300w, width-370 400w, width-470 500w, width-750 780w, width-800 800w",
         },
     }
