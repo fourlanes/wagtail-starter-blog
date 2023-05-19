@@ -1,6 +1,7 @@
 import datetime
 
-from django.db import models  # noqa: F401
+from django.db import models
+from django.contrib.contenttypes.models import ContentType
 
 from modelcluster.fields import ParentalKey
 from modelcluster.contrib.taggit import ClusterTaggableManager
@@ -44,6 +45,18 @@ class BlogListing(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
     content_panels = Page.content_panels + [
         ContactUsFooterPanels(),
     ]
+
+    def get_context(self, request):
+        context = super(BlogListing, self).get_context(request)
+
+        article_content_type = ContentType.objects.get_for_model(ArticlePage)
+        context["topics"] = (
+            ArticleTopic.objects.filter(tagged_article__content_object__content_type=article_content_type)
+            .distinct()
+            .order_by("name")
+        )
+
+        return context
 
 
 class ArticlePage(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
