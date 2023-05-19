@@ -91,3 +91,7 @@ blockquote cite {
   font-size: 12px;
   font-weight: 600;
 }
+
+.entry-content iframe {
+  min-height: 500px;
+}

@@ -23,7 +23,5 @@ STREAMFIELD_RICHTEXT_FEATURES = [
     "ol",
     "ul",
     "link",
-    # "document-link",
-    # "image",
-    # "embed",
+    "embed",
 ]
