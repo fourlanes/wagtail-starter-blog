@@ -22,30 +22,30 @@
 
 /* === RICHTEXT === */
 
-.post .entry-content {
+.single-post .post .entry-content {
   background: #fff;
   padding: 0;
 }
 
-article .entry-content > h2,
+.single-post article .entry-content > h2,
 article .entry-content > h3,
 article .entry-content > h4 {
   color: #002d62;
 }
 
-article .entry-content ol {
+.single-post article .entry-content ol {
   list-style-position: outside;
   list-style-type: decimal;
   padding-left: 2.5em;
 }
 
-article .entry-content ul {
+.single-post article .entry-content ul {
   list-style-position: outside;
   list-style-type: disc;
   padding-left: 2.5em;
 }
 
-article .entry-content a {
+.single-post article .entry-content a {
   color: #ffab00;
   text-decoration: underline;
 }

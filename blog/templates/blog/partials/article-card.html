@@ -1,0 +1,32 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<article class="post clearfix mb-30 bg-lighter">
+  <div class="entry-content p-20 pr-10">
+      <div class="author-details media-post mb-20">
+
+        {% if item.author and item.author.author_photo %}
+
+          <a href="#" class="post-thumb mb-0 pull-left flip pr-20">
+            {% image item.author.author_photo fill-80x80 class="img-thumbnail" %}
+          </a>
+
+        {% endif %}
+        <div class="post-right">
+            <h4 class="post-title mt-0 mb-0 mt-5 text-uppercase">
+                <a href="#" class="font-18 font-weight-700">{{item.title}}</a>
+            </h4>
+            <p class="text-capitalize mb-0">
+                <span class="mb-10 mr-10 font-15 text-theme-colored">{{item.author.author_name}}</span>
+            </p>
+            <p class="text-theme-colored-secondary text-uppercase font-12 font-weight-600">
+                {{item.author.author_credential}}
+                <span class="text-gray-darkgray font-12 ml-5">{{item.published_date | date:'d M Y'}}<span>
+            <p>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <p class="mt-10">{{item.search_description}}</p>
+      <a href="{% pageurl item %}">Read more</a>
+      <div class="clearfix"></div>
+  </div>
+</article>
