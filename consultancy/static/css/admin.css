@@ -1,0 +1,3 @@
+.label-capitalise .w-field__label {
+  text-transform: capitalize;
+}
