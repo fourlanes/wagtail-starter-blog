@@ -38,7 +38,8 @@
         <div class="row">
 
           {% for item in page.get_children.specific %}
-            {% include 'work/partials/article-card.html' %}
+            {% cycle 'left' 'right' as orientation silent %}
+            {% include 'work/partials/article-card.html' with orientation=orientation %}
           {% endfor %}
 
         </div>
