@@ -1,15 +1,8 @@
-from wagtail.blocks import CharBlock, RichTextBlock, StructBlock, TextBlock, URLBlock
+from wagtail.blocks import CharBlock, StructBlock, TextBlock, URLBlock
 from wagtail.fields import StreamField
 from wagtail.images.blocks import ImageChooserBlock
 
-from common.constants import STREAMFIELD_RICHTEXT_FEATURES
-
-
-class RichText(StructBlock):
-    class Meta:
-        template = "blocks/rich_text.html"
-
-    rich_text = RichTextBlock(features=STREAMFIELD_RICHTEXT_FEATURES)
+from common.blocks import RichText
 
 
 class CaptionedImage(StructBlock):

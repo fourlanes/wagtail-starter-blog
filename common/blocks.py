@@ -1,5 +1,16 @@
-from wagtail.blocks import CharBlock, ChoiceBlock, EmailBlock, ListBlock, StreamBlock, StructBlock, TextBlock
+from wagtail.blocks import (
+    CharBlock,
+    ChoiceBlock,
+    EmailBlock,
+    ListBlock,
+    RichTextBlock,
+    StreamBlock,
+    StructBlock,
+    TextBlock,
+)
 from wagtail.images.blocks import ImageChooserBlock
+
+from common.constants import STREAMFIELD_RICHTEXT_FEATURES
 
 
 class HeadingBlock(StructBlock):
@@ -65,3 +76,10 @@ class AnchorBlock(StructBlock):
     class Meta:
         icon = "thumbtack"
         template = "blocks/anchor_block.html"
+
+
+class RichText(StructBlock):
+    class Meta:
+        template = "blocks/rich_text.html"
+
+    rich_text = RichTextBlock(features=STREAMFIELD_RICHTEXT_FEATURES)

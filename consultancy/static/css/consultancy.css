@@ -36,13 +36,15 @@ article .entry-content > h4,
   color: #002d62;
 }
 
-.service-content .richtext-content h2 {
+.service-content .richtext-content h2,
+.highlight-h2 .richtext-content h2 {
   position: relative;
   margin-bottom: 30px;
   padding-bottom: 10px;
 }
 
-.service-content .richtext-content h2:after {
+.service-content .richtext-content h2:after,
+.highlight-h2 .richtext-content h2:after {
   bottom: -1px;
   content: '';
   height: 2px;
