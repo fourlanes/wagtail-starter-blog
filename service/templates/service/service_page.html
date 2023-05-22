@@ -5,7 +5,11 @@
 
 <div class="main-content service-content">
     {% for block in page.content %}
-      {% include_block block %}
+      {% if block.block_type == 'richtext' and forloop.counter > 2 %}
+        {% include_block block with class="pt-10" %}
+      {% else %}
+        {% include_block block %}
+      {% endif %}
     {% endfor %}
 </div>
 
