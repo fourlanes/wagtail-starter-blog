@@ -117,3 +117,7 @@ blockquote cite {
 .entry-content iframe {
   min-height: 500px;
 }
+
+.height-auto {
+  height: auto !important;
+}

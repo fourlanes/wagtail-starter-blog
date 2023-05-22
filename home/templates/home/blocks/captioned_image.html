@@ -1,0 +1,29 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<section>
+  <div class="container pb-30 pt-10">
+      <div class="section-content">
+          <div class="row">
+            <div class="col-md-12 pb-sm-20">
+
+              <div class="media-figure {% if value.highlight %}media-figure--highlight{% endif %}">
+                  {% image value.image fill-1200x500 class='height-auto' %}
+                  {% if value.caption or value.caption_link %}
+                      <div class="media-caption">
+                          {% if value.caption %}
+                              {{ value.caption }}
+                              {% if value.caption_link %}
+                                  <br>
+                              {% endif %}
+                          {% endif %}
+                          {% if value.caption_link %}
+                              <a href="{{ value.caption_link }}">{{ value.caption_label | default:value.caption_link }}</a>
+                          {% endif %}
+                      </div>
+                  {% endif %}
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</section>
