@@ -1,23 +1,7 @@
-from wagtail.blocks import CharBlock, StructBlock, TextBlock, URLBlock
+from wagtail.blocks import StructBlock, TextBlock
 from wagtail.fields import StreamField
-from wagtail.images.blocks import ImageChooserBlock
 
-from common.blocks import RichText
-
-
-class CaptionedImage(StructBlock):
-    class Meta:
-        help_text = "Displays an image with an optionally linked caption."
-        icon = "image"
-        label = "Captioned image"
-        template = "blocks/captioned_image.html"
-
-    image = ImageChooserBlock(help_text="Optimal minimum width 800px")
-    caption = TextBlock(required=False, help_text="Optional: caption text to appear below the image")
-    caption_link = URLBlock(required=False, help_text="Optional: external link to appear below the image")
-    caption_label = CharBlock(
-        required=False, help_text="Optional: label for the caption link, defaults to the link if left blank"
-    )
+from common.blocks import CaptionedImage, RichText
 
 
 class BlockQuote(StructBlock):
