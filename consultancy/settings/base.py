@@ -30,6 +30,9 @@ INSTALLED_APPS = [
     "common",
     "search",
     "service",
+    "work",
+    "blog",
+    "team",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -181,3 +184,9 @@ EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="tllmnuoduurinoib") 
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="info.suma.ug@gmail.com")
+
+WAGTAILIMAGES_FORMAT_CONVERSIONS = {
+    "webp": "webp",
+    "png": "webp",
+    "jpg": "webp",
+}

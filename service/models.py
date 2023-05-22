@@ -10,6 +10,7 @@ from common.mixins import ContactUsFooterMixin, CustomMetadataPageMixin
 from common.utils import ContactUsFooterPanels
 from common.blocks import AnchorBlock, ContactUsBlock, HeroBlock
 from service.blocks import ClientsBlock, ServicesBlock
+from work.blocks import WorkBlock
 
 
 class ServicePage(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
@@ -28,6 +29,7 @@ class ServicePage(ContactUsFooterMixin, CustomMetadataPageMixin, Page):
             ("anchor", AnchorBlock()),
             ("services", ServicesBlock()),
             ("clients", ClientsBlock()),
+            ("work", WorkBlock()),
         ],
         use_json_field=True,
         null=True,

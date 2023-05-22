@@ -1,0 +1,14 @@
+{% load wagtailcore_tags %}
+
+<div class="col-md-7">
+  <div class="schedule-details clearfix p-15 pt-30">
+      <h2 class="mt-0 text-theme-colored"><a href="{% pageurl item %}">{{item.title}}</a></h3>
+      <div class="clearfix"></div>
+      <p class="mt-10 font-18">
+          {{item.search_description}}
+      </p>
+      <div class="mt-10">
+          <a href="{% pageurl item %}" class="btn btn-default btn-theme-colored mt-10 font-16 btn-sm">Learn More</a>
+      </div>
+  </div>
+</div>

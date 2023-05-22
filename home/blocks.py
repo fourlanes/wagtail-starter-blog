@@ -1,7 +1,7 @@
 from wagtail.blocks import ListBlock, StreamBlock, StructBlock
 from wagtail.images.blocks import ImageChooserBlock
 
-from common.blocks import ContactUsBlock, HeadingBlock
+from common.blocks import ContactUsBlock, HeadingBlock, RichText
 
 
 class HeroBlock(StructBlock):
@@ -16,5 +16,6 @@ class HeroBlock(StructBlock):
 class HomeContentStreamBlock(StreamBlock):
     hero = HeroBlock()
     contact_us = ContactUsBlock()
+    richtext = RichText(template="home/blocks/rich_text.html")
 
     required = True
