@@ -121,3 +121,31 @@ blockquote cite {
 .height-auto {
   height: auto !important;
 }
+
+/* === GRID === */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 60px;
+}
+
+.grid-item {
+  margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 599px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 30px;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 20px;
+  }
+
+  .grid-item {
+    margin-bottom: 0;
+  }
+}

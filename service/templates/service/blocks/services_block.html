@@ -6,10 +6,10 @@
           <div class="row">
               <div class="col-md-12 pb-sm-20">
                   <h2 class="line-bottom mt-0 text-theme-colored">{{self.heading}}</h2>
-                  <div class="row">
+                  <div class="grid">
                     {% for service in self.services %}
-                      <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="icon-box left media bg-silver-light border-1px p-15 mb-20">
+                      <div class="grid-item bg-silver-light border-1px">
+                        <div class="icon-box left media p-15 mb-20">
                             <div class="media-body font-15">
                             <h4 class="font-15 text-uppercase text-theme-colored">{{service.heading}}</h4>
                             {{service.description|richtext}}
