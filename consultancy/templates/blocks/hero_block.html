@@ -1,6 +1,7 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
-<section class="hero divider bg-theme-colored">
+{% image self.image fill-1512x772-c100 as image %}
+<section class="hero divider bg-theme-colored {% if self.image %}layer-overlay{% endif %}" {% if self.image %}data-bg-img="{{image.url}}"{% endif %}>
   <div class="display-table">
       <div class="display-table-cell">
           <div class="container pt-100 pb-100">
