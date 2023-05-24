@@ -8,14 +8,25 @@
                   <h2 class="line-bottom mt-0 text-theme-colored">{{self.heading}}</h2>
                   <div class="grid">
                     {% for service in self.services %}
-                      <div class="grid-item bg-silver-light border-1px">
-                        <div class="icon-box left media p-15 mb-20">
+                      {% if service.page %}
+                        <a href="{% pageurl service.page %}" class="grid-item bg-silver-light border-1px">
+                          <div class="icon-box left media p-15 mb-20">
                             <div class="media-body font-15">
                             <h4 class="font-15 text-uppercase text-theme-colored">{{service.heading}}</h4>
                             {{service.description|richtext}}
                             </div>
                         </div>
-                      </div>
+                        </a>
+                      {% else %}
+                        <div class="grid-item bg-silver-light border-1px">
+                          <div class="icon-box left media p-15 mb-20">
+                              <div class="media-body font-15">
+                              <h4 class="font-15 text-uppercase text-theme-colored">{{service.heading}}</h4>
+                              {{service.description|richtext}}
+                              </div>
+                          </div>
+                        </div>
+                      {% endif %}
                     {% endfor %}
                   </div>
               </div>

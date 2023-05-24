@@ -1,4 +1,4 @@
-from wagtail.blocks import CharBlock, ListBlock, RichTextBlock, StructBlock, TextBlock, URLBlock
+from wagtail.blocks import CharBlock, ListBlock, PageChooserBlock, RichTextBlock, StructBlock, TextBlock, URLBlock
 from wagtail.images.blocks import ImageChooserBlock
 
 from common.constants import SIMPLE_RICHTEXT_FEATURES
@@ -12,7 +12,11 @@ class ServicesBlock(StructBlock):
     heading = TextBlock(required=True, default="Services")
     services = ListBlock(
         StructBlock(
-            [("heading", CharBlock(required=True)), ("description", RichTextBlock(features=SIMPLE_RICHTEXT_FEATURES))]
+            [
+                ("heading", CharBlock(required=True)),
+                ("description", RichTextBlock(features=SIMPLE_RICHTEXT_FEATURES)),
+                ("page", PageChooserBlock(required=False)),
+            ]
         )
     )
 
