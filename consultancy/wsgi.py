@@ -10,7 +10,13 @@ https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
+from decouple import config
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "consultancy.settings.dev")
+enviroment = config("ENVIRONMENT", "dev")
+
+if enviroment.lower() == "production" or enviroment.lower() == "staging":
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "consultancy.settings.production")
+else:
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "consultancy.settings.dev")
 
 application = get_wsgi_application()
