@@ -14,7 +14,7 @@ services:
       - ./:/code/:delegated,rw
     expose:
       - 8000
-    env_file: .env.production
+    env_file: .env
     depends_on:
       - db
     networks:
