@@ -10,7 +10,7 @@ ADMINS = [
 ]
 
 ALLOWED_HOSTS = ["0.0.0.0", "line23.co", "188.166.155.56"]
-CSRF_TRUSTED_ORIGINS = ["https://suma.ug"]
+CSRF_TRUSTED_ORIGINS = ["https://line23.co"]
 
 try:
     from .local import *
