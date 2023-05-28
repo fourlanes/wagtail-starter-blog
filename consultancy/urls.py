@@ -29,6 +29,10 @@ if settings.DEBUG:
     urlpatterns += [
         path("robots.txt", TemplateView.as_view(template_name="robots.dev.txt", content_type="text/plain")),
     ]
+    urlpatterns += [
+        re_path(r"test404", TemplateView.as_view(template_name="404.html")),
+        re_path(r"test500", TemplateView.as_view(template_name="500.html")),
+    ]
 else:
     urlpatterns += [
         path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
