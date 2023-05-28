@@ -190,3 +190,5 @@ WAGTAILIMAGES_FORMAT_CONVERSIONS = {
     "png": "webp",
     "jpg": "webp",
 }
+
+PASSWORD_REQUIRED_TEMPLATE = "password_required.html"
