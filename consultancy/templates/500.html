@@ -4,10 +4,122 @@
         <meta charset="utf-8" />
         <title>Internal server error</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <style>
+          body {
+            line-height: 1.7;
+            color: #666666;
+            font-size: 14px;
+            font-family: 'Kumbh Sans', sans-serif;
+            background-color: #fff;
+          }
+          header {
+            display: block;
+          }
+          .header-nav {
+            -webkit-transition: all 0.4s ease-in-out 0s;
+            -o-transition: all 0.4s ease-in-out 0s;
+            transition: all 0.4s ease-in-out 0s;
+            position: relative;
+          }
+          .header-nav-wrapper {
+            background-color: #f7f8fa !important;
+          }
+          .header-nav nav {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            padding: 0;
+            background: none !important;
+            width: 100%;
+            float: left;
+            position: relative;
+            display: block;
+          }
+          .header-nav nav a {
+            -o-transition: color .3s linear, background .3s linear;
+            -moz-transition: color .3s linear, background .3s linear;
+            -webkit-transition: color .3s linear, background .3s linear;
+            transition: color .3s linear, background .3s linear;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 18px 30px 18px 0;
+            color: #666;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.3;
+            cursor: pointer;
+            float: left!important;
+          }
+          a {
+            color: #002D62;
+            text-decoration: underline;
+          }
+          a:hover,
+          .header-nav nav a:hover {
+            color: #FFAB00;
+            text-decoration: none;
+          }
+          .text-theme-colored {
+            color: #002D62 !important;
+          }
+          .font-150 {
+            font-size: 16rem !important;
+          }
+          h1, h2, .h1, .h2 {
+            font-family: 'Kumbh Sans', sans-serif;
+            font-weight: 700;
+            line-height: 1.42857143;
+          }
+          h1 {
+            margin: 0.67em 0 0;
+          }
+          h2 {
+            font-size: 4rem;
+            color: #333333;
+            margin-top: 0;
+          }
+        </style>
     </head>
     <body>
-        <h1>Internal server error</h1>
+        <div id="wrapper" class="clearfix">
+            <header id="header" class="header">
+                <div class="header-nav">
+                    <div class="header-nav-wrapper">
+                        <div class="container">
+                            <nav id="menuzord-right">
+                                <a href="/">
+                                    LINE <span class="text-theme-colored">23</span>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
 
-        <h2>Sorry, there seems to be an error. Please try again soon.</h2>
+        <section id="home" class="divider fullscreen bg-lightest">
+          <div class="display-table text-center">
+            <div class="display-table-cell">
+              <div class="container pt-0 pb-0">
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-2">
+                    <h1 class="font-150 text-theme-colored mt-0 mb-0">500!</h1>
+                    <h2 class="mt-0">Internal server error</h2>
+                    <p>Sorry, there seems to be an error. Please try again soon.</p>
+                    <a href="/">RETURN HOME</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </body>
 </html>
