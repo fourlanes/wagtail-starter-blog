@@ -9,6 +9,9 @@ register = template.Library()
 def contact_us_footer(context):
     self = context.get("self")
 
+    if not self:
+        return {"request": context.get("request")}
+
     if not self.show_contact_us_footer:
         return {"self": None, "request": context.get("request")}
 
