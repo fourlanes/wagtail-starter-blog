@@ -12,8 +12,6 @@ URL:            http://themeforest.net/user/ThemeMascot
 @import '../css/font-awesome.min.css';
 @import '../css/font-awesome-animation.min.css';
 @import '../css/pe-icon-7-stroke.css';
-/* @import "../css/elegant-icons.css"; */
-/* @import "../css/stroke-gap-icons.css"; */
 @import '../css/flaticon-set-charity.css';
 @import '../css/utility-classes.css';
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800|Playfair+Display:400,400italic,700,700italic|Kumbh+Sans:wght@300,400,500,600,700,800);
@@ -974,18 +972,6 @@ section > .container-fluid {
 .layer-overlay.overlay-white-9::before {
   background-color: rgba(255, 255, 255, 0.9);
 }
-.layer-overlay.layer-pattern::before {
-  background-image: url(../images/pattern1.png);
-  background-color: rgba(0, 0, 0, 0.6);
-}
-.layer-overlay.layer-pattern2::before {
-  background-image: url(../images/pattern2.png);
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.layer-overlay.layer-pattern3::before {
-  background-image: url(../images/pattern3.png);
-  background-color: rgba(0, 0, 0, 0.8);
-}
 .layer-overlay.maximage-layer-overlay::before {
   z-index: 1;
 }
@@ -1803,9 +1789,6 @@ form .error {
   pointer-events: auto;
   z-index: 1111;
 }
-.side-panel-open:not(.device-xxs):not(.device-xs):not(.device-sm) .body-overlay:hover {
-  cursor: url('../images/close.png') 15 15, default;
-}
 /* -------- Side Panel ---------- */
 #side-panel {
   -webkit-backface-visibility: hidden;
@@ -2173,17 +2156,6 @@ form .error {
 }
 .box-hover-effect:hover .effect-wrapper .text-holder-bottom-right {
   bottom: 0;
-}
-.shadow-overlay {
-  background-image: url('../images/shadow-overlay.png');
-  background-position: center bottom;
-  background-repeat: repeat-x;
-  bottom: 0;
-  color: #fff;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  width: 100%;
 }
 /* Individual effects */
 /* Individual effect = image-zoom-in */
@@ -5582,22 +5554,6 @@ blockquote p {
   left: 0;
   right: 0;
   margin: 0 auto;
-}
-.title-dots {
-  background: url('../images/title-dots.png') repeat scroll 0 0;
-  height: 30px;
-  margin-bottom: 20px;
-}
-.title-dots span {
-  color: #fff;
-  font-size: 17px;
-  line-height: 28px;
-  padding: 0 10px;
-}
-.title-dots.small span {
-  font-size: 12px;
-  line-height: 28px;
-  padding: 4px 8px;
 }
 /*
  * Shortcode: separators.less

@@ -3,6 +3,7 @@ env/
 .env
 __pycache__
 /assets
+/static
 
 node_modules
 
