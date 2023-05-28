@@ -9,7 +9,7 @@ ADMINS = [
     ("Edwin", "emagezi@gmail.com"),
 ]
 
-ALLOWED_HOSTS = ["line23.co"]
+ALLOWED_HOSTS = ["0.0.0.0", "line23.co", "188.166.155.56"]
 CSRF_TRUSTED_ORIGINS = ["https://suma.ug"]
 
 try:
