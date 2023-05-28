@@ -14,7 +14,7 @@
                       </div>
                   </div>
 
-                  {% if page.sections|length %}
+                  {% if page.sections|length or page.get_children.live.in_menu|length %}
 
                   <div class="col-md-4 hero__aside">
                     <ul class="inPageNav">
@@ -24,6 +24,13 @@
                               {{item.value.name}}
                           </a>
                         </li>
+                        {% for item in page.get_children.live.in_menu %}
+                          <li class="inPageNav__item">
+                            <a href="{% pageurl item %}" class="inPageNav__link">
+                                {{item.title}}
+                            </a>
+                          </li>
+                        {% endfor %}
                       {% endfor %}
                     </ul>
                   </div>
