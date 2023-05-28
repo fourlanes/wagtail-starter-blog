@@ -171,3 +171,7 @@ a.grid-item:hover h4 {
   -webkit-mask-image: url('../img/Line 23.svg');
   -webkit-mask-repeat: no-repeat;
 }
+
+.anchor {
+  height: 0;
+}

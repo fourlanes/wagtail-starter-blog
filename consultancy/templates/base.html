@@ -21,7 +21,7 @@
 
         {# Force all links in the live preview panel to be opened in a new tab #}
         {% if request.in_preview_panel %}
-        <base target="_blank">
+          <base target="_blank">
         {% endif %}
 
         {% block html_header %}
