@@ -176,6 +176,11 @@ a.grid-item:hover h4 {
   .hero__aside {
     width: 100%;
   }
+
+  .hero .container {
+    padding-top: 1rem !important;
+    padding-bottom: 1em !important;
+  }
 }
 
 .anchor {
