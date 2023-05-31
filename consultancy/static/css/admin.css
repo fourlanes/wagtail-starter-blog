@@ -1,3 +1,8 @@
 .label-capitalise .w-field__label {
   text-transform: capitalize;
 }
+.logo.logo-small {
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
