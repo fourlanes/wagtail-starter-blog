@@ -172,6 +172,16 @@ a.grid-item:hover h4 {
   -webkit-mask-repeat: no-repeat;
 }
 
+@media (max-width: 996px) {
+  .hero__aside {
+    width: 100%;
+  }
+}
+
 .anchor {
   height: 0;
+}
+
+.menuzord-menu {
+  display: none;
 }
