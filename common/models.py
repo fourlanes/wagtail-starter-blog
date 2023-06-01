@@ -13,6 +13,7 @@ class ContactUsFooter(BaseGenericSetting):
     photo = WagtailImageField(required=False)
     email = models.EmailField()
     phone_number = models.CharField(max_length=20, verbose_name="Phone Number")
+    address = models.TextField(null=True, blank=True)
 
     panels = [
         FieldPanel("heading"),
@@ -20,6 +21,7 @@ class ContactUsFooter(BaseGenericSetting):
         FieldPanel("photo"),
         FieldPanel("email"),
         FieldPanel("phone_number"),
+        FieldPanel("address"),
     ]
 
     class Meta:

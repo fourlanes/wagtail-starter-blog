@@ -28,6 +28,12 @@
                             </a>
                         </div>
                     </div>
+
+                    {% if self.address %}
+                    <div class="mt-5 font-17 font-weight-500 text-theme-colored">
+                      <i class="fa fa-map-marker mr-5"></i>{{self.address}}
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
