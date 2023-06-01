@@ -39,7 +39,7 @@ class CustomMetadataPageMixin(MetadataPageMixin):
 
     def get_meta_title(self):
         site = self.get_site
-        site_name = site.site_name if hasattr(site, "site_name") else "SUMA"
+        site_name = site.site_name if hasattr(site, "site_name") else "Line 23"
         return "%s - %s" % (self.seo_title if self.seo_title else self.title, site_name)
 
 
