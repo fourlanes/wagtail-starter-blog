@@ -568,7 +568,10 @@ a.btn-default.btn-theme-colored:focus {
  .btn-theme-colored-secondary.btn-default:hover {
   background: #fff;
   color: #FFAB00;
-  border: #FFAB00;
+  border-color: #FFAB00;
+}
+.header-nav .btn-theme-colored-secondary.btn-default {
+  border-radius: 3px;
 }
 .hero__title .btn-theme-colored-secondary.btn-default {
   padding: 12px 22px;
