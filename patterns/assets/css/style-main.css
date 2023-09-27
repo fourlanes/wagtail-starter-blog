@@ -6976,6 +6976,45 @@ blockquote p {
 .hero__title h6 {
   max-width: 800px;
 }
+.hero__title h1 {
+  line-height: 67px;
+  padding-bottom: 1rem;
+}
+.hero__aside.hero__aside--transparent {
+  float: left;
+  padding-left: 0;
+}
+.hero__aside.hero__aside--transparent .inPageNav {
+  background: none;
+  padding: 0;
+}
+.hero__aside.hero__aside--transparent .inPageNav__link {
+  color: #fff;
+  font-size: 24px;
+}
+.hero__aside.hero__aside--transparent .inPageNav__link:hover {
+  color: #FFAB00;
+}
+@media only screen and (max-width : 1199px) {
+  .hero__aside.hero__aside--transparent {
+    padding: 60px 0 60px;
+  }
+}
+@media only screen and (max-width : 991px) {
+  .hero__aside.hero__aside--transparent {
+    padding: 0;
+  }
+}
+@media only screen and (max-width : 767px) {
+  .hero__aside.hero__aside--transparent {
+    padding: 0;
+  }
+}
+@media only screen and (min-width : 1200px) {
+  .hero__aside.hero__aside--transparent {
+    padding: 60px 0 60px;
+  }
+}
 
 .inPageNav {
   padding: 1rem;
