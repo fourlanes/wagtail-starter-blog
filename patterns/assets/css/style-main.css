@@ -83,6 +83,9 @@ This file contains the common styles of this theme.
 * Footer
 * ===============================================
 */
+.container {
+  width: 90%;
+}
 /*
  * Typography.less
  * -----------------------------------------------
@@ -6976,9 +6979,34 @@ blockquote p {
 .hero__title h6 {
   max-width: 800px;
 }
+.hero__links {
+  max-width: 800px;
+}
 .hero__title h1 {
   line-height: 67px;
   padding-bottom: 1rem;
+}
+.hero__links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.hero__links li {
+  margin-right: 1.2rem;
+  font-size: 1rem;
+  color: #fff;
+}
+.hero__links li a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.hero__links li:hover a {
+  color: #FFAB00;
+  text-decoration: underline;
+}
+.hero__links li:first-child {
+  margin-left: 0;
 }
 .hero__aside.hero__aside--transparent {
   float: left;
@@ -7008,6 +7036,10 @@ blockquote p {
 @media only screen and (max-width : 767px) {
   .hero__aside.hero__aside--transparent {
     padding: 0;
+  }
+  
+  .hero__links li {
+    width: 45%;
   }
 }
 @media only screen and (min-width : 1200px) {
