@@ -557,6 +557,32 @@ a.btn-default.btn-theme-colored:focus {
   color: #fff !important;
 }
 /*
+ *
+ * btn-default btn-theme-colored-secondary
+ * ---------------------------------------
+ */
+ .btn-theme-colored-secondary.btn-default {
+  background: #FFAB00;
+  color: #fff;
+ }
+ .btn-theme-colored-secondary.btn-default:hover {
+  background: #fff;
+  color: #FFAB00;
+  border: #FFAB00;
+}
+.hero__title .btn-theme-colored-secondary.btn-default {
+  padding: 12px 22px;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #fff;
+  color: #333;
+}
+.hero__title .btn-theme-colored-secondary.btn-default:hover {
+  background: #FFAB00;
+  color: #fff;
+}
+/*
  * btn-border
  * -----------------------------------------------
 */
