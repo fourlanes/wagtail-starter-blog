@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     "wagtail.search",
     "wagtail.admin",
     "wagtail",
-    "wagtail.contrib.modeladmin",
     "wagtail.contrib.settings",
     "wagtail.contrib.styleguide",
     "wagtail.contrib.routable_page",
