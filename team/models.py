@@ -37,7 +37,7 @@ class Author(index.Indexed, models.Model):
     )
 
     search_fields = [
-        index.SearchField("author_name", partial_match=True),
+        index.AutocompleteField("author_name"),
     ]
 
     panels = [
