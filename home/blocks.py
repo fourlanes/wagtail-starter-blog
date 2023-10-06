@@ -1,4 +1,4 @@
-from wagtail.blocks import ListBlock, StreamBlock, StructBlock
+from wagtail.blocks import ChoiceBlock, ListBlock, StreamBlock, StructBlock
 from wagtail.images.blocks import ImageChooserBlock
 
 from common.blocks import CaptionedImage, ContactUsBlock, HeadingBlock, RichText
@@ -6,6 +6,15 @@ from common.blocks import CaptionedImage, ContactUsBlock, HeadingBlock, RichText
 
 class HeroBlock(StructBlock):
     image = ImageChooserBlock()
+    overlay = ChoiceBlock(
+        choices=[
+            ("basic", "Basic"),
+            ("theme-coloured", "Theme Coloured"),
+            ("theme-gradient", "Theme Coloured Gradient"),
+            ("none", "None"),
+        ],
+        default="theme-coloured",
+    )
     content = ListBlock(HeadingBlock(template="home/blocks/heading_block.html"))
 
     class Meta:
