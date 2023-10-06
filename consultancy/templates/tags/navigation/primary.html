@@ -4,4 +4,5 @@
     {% for item in menu_items %}
         <li {% if item.active %}class="active"{% endif %}><a href="{% pageurl item %}">{{item.title}}</a></li>
     {% endfor %}
+    {% cta_button %}
 </ul>
