@@ -1,0 +1,15 @@
+{% load wagtailcore_tags %}
+
+{% if self.page %}
+  <a href="{% pageurl self.page %}" class="btn {% if self.style == 'primary' %}btn-theme-colored{% else %}btn-theme-colored-secondary{% endif %} {{classes}}">
+    {% if self.caption %}
+      {{ self.caption }}
+    {% else %}
+      {{ self.page.title }}
+    {% endif %}
+  </a>
+{% elif self.url or self.anchor_id %}
+    <a href="{% if self.url %}{{ self.url }}{% else %}#{{self.anchor_id}}{% endif %}" class="btn {% if self.style == 'primary' %}btn-theme-colored{% else %}btn-theme-colored-secondary{% endif %} {{classes}}">
+      {{ self.caption }}
+    </a>
+{% endif %}

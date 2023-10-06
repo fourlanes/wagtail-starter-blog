@@ -3,6 +3,7 @@ from wagtail.blocks import (
     ChoiceBlock,
     EmailBlock,
     ListBlock,
+    PageChooserBlock,
     RichTextBlock,
     StreamBlock,
     StructBlock,
@@ -12,6 +13,42 @@ from wagtail.blocks import (
 from wagtail.images.blocks import ImageChooserBlock
 
 from common.constants import STREAMFIELD_RICHTEXT_FEATURES
+
+
+class AbstractLinkBlock(StructBlock):
+    caption = CharBlock(required=False, help_text="Leave blank if you wish to use the page title as a caption")
+    page = PageChooserBlock(
+        required=False, help_text="For the link/button to show, either this or the url are required"
+    )
+    url = URLBlock(required=False, help_text="An alternative to an internal page")
+
+    class Meta:
+        icon = "link"
+        abstract = True
+
+
+class LinkBlock(AbstractLinkBlock):
+    class Meta:
+        icon = "link"
+        template = "blocks/link_block.html"
+
+
+class ButtonBlock(AbstractLinkBlock):
+    style = ChoiceBlock([("primary", "Primary"), ("secondary", "Secondary")], required=False, default="primary")
+
+    class Meta:
+        template = "blocks/button_block.html"
+        label = "A Link Button"
+        form_classname = "button-block indent-fields"
+        help_text = "Displays a link/button that navigates to the specified page or url when clicked"
+
+
+class ImageLink(AbstractLinkBlock):
+    class Meta:
+        icon = "link"
+        template = "blocks/image_link.html"
+
+    image = ImageChooserBlock()
 
 
 class HeadingBlock(StructBlock):

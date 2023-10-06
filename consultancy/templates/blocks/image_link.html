@@ -1,0 +1,22 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% image self.image fill-1200x680-c100 as image %}
+{% if self.page %}
+  <a href="{% pageurl self.page %}" target="_blank" rel=”noopener”>
+    <img src="{{image.url}}" alt="{{image.alt}}"/>
+    {% if self.caption %}
+    <div class="media-body font-15">
+        <h4 class="font-20 text-center">{{self.caption}}</h4>
+    </div>
+    {% endif %}
+  </a>
+{% elif self.url or self.anchor_id %}
+    <a href="{% if self.url %}{{ self.url }}{% else %}#{{self.anchor_id}}{% endif %}" target="_blank" rel=”noopener”>
+        <img src="{{image.url}}" alt="{{image.alt}}"/>
+        {% if self.caption %}
+        <div class="media-body font-15">
+            <h4 class="font-20 text-center">{{self.caption}}</h4>
+        </div>
+        {% endif %}
+    </a>
+{% endif %}

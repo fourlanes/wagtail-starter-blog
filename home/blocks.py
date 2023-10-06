@@ -1,7 +1,7 @@
 from wagtail.blocks import CharBlock, ChoiceBlock, ListBlock, PageChooserBlock, StreamBlock, StructBlock
 from wagtail.images.blocks import ImageChooserBlock
 
-from common.blocks import CaptionedImage, ContactUsBlock, HeadingBlock, RichText
+from common.blocks import ButtonBlock, CaptionedImage, ContactUsBlock, HeadingBlock, RichText
 
 
 class HeroBlock(StructBlock):
@@ -20,6 +20,7 @@ class HeroBlock(StructBlock):
         StructBlock([("caption", CharBlock(required=False)), ("page", PageChooserBlock(required=True))]),
         required=False,
     )
+    button = ButtonBlock(required=False, template="home/blocks/hero_block_button.html")
 
     class Meta:
         template = "home/blocks/hero_block.html"
