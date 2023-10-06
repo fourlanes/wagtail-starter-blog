@@ -1,4 +1,4 @@
-from wagtail.blocks import ChoiceBlock, ListBlock, StreamBlock, StructBlock
+from wagtail.blocks import CharBlock, ChoiceBlock, ListBlock, PageChooserBlock, StreamBlock, StructBlock
 from wagtail.images.blocks import ImageChooserBlock
 
 from common.blocks import CaptionedImage, ContactUsBlock, HeadingBlock, RichText
@@ -16,6 +16,10 @@ class HeroBlock(StructBlock):
         default="theme-coloured",
     )
     content = ListBlock(HeadingBlock(template="home/blocks/heading_block.html"))
+    links = ListBlock(
+        StructBlock([("caption", CharBlock(required=False)), ("page", PageChooserBlock(required=True))]),
+        required=False,
+    )
 
     class Meta:
         template = "home/blocks/hero_block.html"
