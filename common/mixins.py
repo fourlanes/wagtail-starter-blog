@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy
 
 from wagtailmetadata.models import MetadataPageMixin
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+from wagtail.admin.widgets.slug import SlugInput
 
 
 class CustomMetadataPageMixin(MetadataPageMixin):
@@ -12,7 +13,7 @@ class CustomMetadataPageMixin(MetadataPageMixin):
     promote_panels = [
         MultiFieldPanel(
             [
-                FieldPanel("slug"),
+                FieldPanel("slug", widget=SlugInput),
                 FieldPanel("seo_title"),
                 FieldPanel("search_description"),
                 FieldPanel("search_image"),
