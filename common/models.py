@@ -2,8 +2,9 @@ from django.db import models
 
 from wagtail.contrib.settings.models import BaseGenericSetting, register_setting
 from wagtail.admin.panels import FieldPanel
+from wagtail.models import Page
 
-from common.utils import WagtailImageField
+from common.utils import ForeignKeyField, WagtailImageField
 
 
 @register_setting
@@ -26,3 +27,18 @@ class ContactUsFooter(BaseGenericSetting):
 
     class Meta:
         verbose_name = "Contact Us Footer"
+
+
+@register_setting
+class NavCTA(BaseGenericSetting):
+    class Meta:
+        verbose_name = "Nav Call to Action"
+
+    caption = models.CharField(null=False, blank=False)
+    page = ForeignKeyField(
+        model=Page,
+        help_text="For the link/button to show, either this or the url are required",
+    )
+    url = models.URLField(blank=True, null=True, help_text="An alternative to an internal page")
+
+    panels = [FieldPanel("caption"), FieldPanel("page"), FieldPanel("url")]
