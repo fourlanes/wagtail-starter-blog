@@ -284,6 +284,9 @@ COLOR CODE: #002D62
 .overlay-theme-colored:before {
   background-color: rgba(0, 45, 98, 0.8) !important;
 }
+.overlay-theme-gradient:before {
+  background: linear-gradient(to top right, rgba(0, 45, 98, 1) 45%, rgba(0, 82, 179, 0.1));
+}
 /* Layeroverlay */
 .post .entry-meta.meta-absolute,
 .volunteer .overlay,
@@ -552,6 +555,35 @@ a.btn-default.btn-theme-colored:hover,
 a.btn-default.btn-theme-colored:active,
 a.btn-default.btn-theme-colored:focus {
   color: #fff !important;
+}
+/*
+ *
+ * btn-default btn-theme-colored-secondary
+ * ---------------------------------------
+ */
+ .btn-theme-colored-secondary.btn-default {
+  background: #FFAB00;
+  color: #fff;
+ }
+ .btn-theme-colored-secondary.btn-default:hover {
+  background: #fff;
+  color: #FFAB00;
+  border-color: #FFAB00;
+}
+.header-nav .btn-theme-colored-secondary.btn-default {
+  border-radius: 3px;
+}
+.hero__title .btn-theme-colored-secondary.btn-default {
+  padding: 12px 22px;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #fff;
+  color: #333;
+}
+.hero__title .btn-theme-colored-secondary.btn-default:hover {
+  background: #FFAB00;
+  color: #fff;
 }
 /*
  * btn-border
