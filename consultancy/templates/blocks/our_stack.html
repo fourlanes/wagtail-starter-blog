@@ -1,0 +1,44 @@
+{% load wagtailcore_tags static %}
+
+<section class="divider layer-overlay overlay-light bg-silver-light">
+    <div class="container">
+        <div class="section-content text-left">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="line-bottom mt-0 text-theme-colored">{{self.heading}}</h2>
+                    <p class="h4 font-weight-400 font-22">{{self.content|richtext}}</p>
+                    {% include_block self.button with classes="btn-lg mt-15" %}
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-4 col-sm-3 col-xs-4">
+                        <img width="96" height="97" src="{% static 'img/wagtail.svg' %}"/>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-4">
+                        <img width="96" height="97" src="{% static 'img/nodejs.svg' %}"/>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-4">
+                        <img width="96" height="97" src="{% static 'img/django.svg' %}"/>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-4">
+                        <img width="96" height="97" src="{% static 'img/react.svg' %}"/>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-4">
+                        <img width="96" height="97" src="{% static 'img/nextjs.svg' %}"/>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-4">
+                        <img width="96" height="97" src="{% static 'img/vue.svg' %}"/>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-4">
+                        <img width="96" height="97" src="{% static 'img/slack.svg' %}"/>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-4">
+                        <img width="96" height="97" src="{% static 'img/github.svg' %}"/>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-4">
+                        <img width="96" height="97" src="{% static 'img/webflow.svg' %}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

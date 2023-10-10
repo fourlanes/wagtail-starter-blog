@@ -136,3 +136,15 @@ class CaptionedImage(StructBlock):
     caption_label = CharBlock(
         required=False, help_text="Optional: label for the caption link, defaults to the link if left blank"
     )
+
+
+class OurStack(StructBlock):
+    class Meta:
+        help_text = "A static view of our tech stack, with a dynamic heading and content"
+        icon = "bars"
+        label = "Our Stack"
+        template = "blocks/our_stack.html"
+
+    heading = CharBlock(required=True)
+    content = TextBlock(required=True)
+    button = ButtonBlock(required=False)
