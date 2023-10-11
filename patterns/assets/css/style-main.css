@@ -7042,6 +7042,11 @@ blockquote p {
     width: 45%;
   }
 }
+@media only screen and (max-width : 479px) {
+  .hero__links li {
+    width: 100%;
+  }
+}
 @media only screen and (min-width : 1200px) {
   .hero__aside.hero__aside--transparent {
     padding: 60px 0 60px;

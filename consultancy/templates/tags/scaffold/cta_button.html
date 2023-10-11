@@ -1,0 +1,9 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% if self.page or self.url %}
+<li class="visible-md visible-lg ml-10">
+    <a href="{% if self.page %}{% pageurl self.page %}{% else %}{{self.url}}{% endif %}" class="btn btn-theme-colored-secondary btn-default" target="_blank">
+        {{self.caption}}
+    </a>
+</li>
+{% endif %}

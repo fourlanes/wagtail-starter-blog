@@ -1,7 +1,7 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
 {% image self.image fill-1512x772-c100 as image %}
-<section id="home" class="hero divider layer-overlay overlay-theme-colored" data-bg-img="{{image.url}}">
+<section id="home" class="hero divider {% if self.overlay != 'none' %}layer-overlay{% endif %}{% if self.overlay == 'theme-coloured' %} overlay-theme-colored{% elif self.overlay == 'theme-gradient' %} overlay-theme-gradient{% endif %}" data-bg-img="{{image.url}}">
     <div class="display-table">
         <div class="display-table-cell">
             <div class="container pt-100 pb-100">
@@ -11,6 +11,19 @@
                             {% for block in self.content %}
                                 {% include_block block %}
                             {% endfor %}
+
+                            {% if self.links %}
+                            <div class="hero__links">
+                                <ul>
+                                    {% for link in self.links %}
+                                    {% if link.page %}
+                                    <li><a href="{% pageurl link.page %}">{% if link.caption %}{{link.caption}}{% else %}{{link.page.title}}{% endif %}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+                            {% include_block self.button %}
                         </div>
                     </div>
                 </div>

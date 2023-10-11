@@ -7,6 +7,7 @@ from django import template
 from wagtail.models import Page, Site
 
 from consultancy.context import globals
+from common.models import NavCTA
 
 register = template.Library()
 
@@ -93,3 +94,16 @@ def breadcrumbs(context):
     else:
         ancestors = Page.objects.live().ancestor_of(self, inclusive=True).filter(depth__gt=1)
     return {"ancestors": ancestors, "request": context["request"], "global": global_obj["global"]}
+
+
+@register.inclusion_tag("tags/scaffold/cta_button.html", takes_context=True)
+def cta_button(context):
+    instance = NavCTA.load(request_or_site=context["request"])
+
+    if not instance:
+        return {"request": context.get("request")}
+
+    return {
+        "self": instance,
+        "request": context.get("request"),
+    }
