@@ -7023,6 +7023,34 @@ blockquote p {
 .hero__aside.hero__aside--transparent .inPageNav__link:hover {
   color: #FFAB00;
 }
+.hero.hero--blog h1 {
+  color: #002D62;
+}
+.hero.hero--image h1 {
+  color: #ffffff;
+}
+.hero.hero--image .tags a {
+  color: #ffffff;
+}
+.hero.hero--image .tags a:hover {
+  background-color: #FFAB00;
+}
+.blog--highlight .heading {
+  color: #ffffff;
+  margin-top: 0;
+}
+.blog--highlight .btn {
+  border-radius: 0;
+  height: 45px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #222;
+}
+.blog--highlight .tag {
+  color: #ffffff;
+  text-transform: uppercase;
+}
 @media only screen and (max-width : 1199px) {
   .hero__aside.hero__aside--transparent {
     padding: 60px 0 60px;
