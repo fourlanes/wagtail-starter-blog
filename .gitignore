@@ -5,6 +5,7 @@ __pycache__
 /assets
 /static
 /certbot
+/src/assets/
 
 node_modules
 
