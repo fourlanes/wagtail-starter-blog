@@ -24,15 +24,15 @@ services:
   db:
     image: postgres:latest
     environment:
-      POSTGRES_USER: consultancy
-      POSTGRES_DB: consultancy
-      POSTGRES_PASSWORD: consultancy
+      POSTGRES_USER: starter
+      POSTGRES_DB: starter
+      POSTGRES_PASSWORD: starter
     restart: always
     expose:
       - "5432"
     volumes:
-      - consultancy:/var/lib/postgresql/data
+      - starter:/var/lib/postgresql/data
 
 volumes:
-  consultancy:
+  starter:
     external: true

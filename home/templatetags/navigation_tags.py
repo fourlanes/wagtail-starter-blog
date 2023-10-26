@@ -6,7 +6,7 @@ from django import template
 
 from wagtail.models import Page, Site
 
-from consultancy.context import globals
+from starter.context import globals
 from common.models import NavCTA
 
 register = template.Library()

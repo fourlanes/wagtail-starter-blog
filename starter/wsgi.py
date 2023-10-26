@@ -1,5 +1,5 @@
 """
-WSGI config for consultancy project.
+WSGI config for starter project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -15,8 +15,8 @@ from decouple import config
 enviroment = config("ENVIRONMENT", "dev")
 
 if enviroment.lower() == "production" or enviroment.lower() == "staging":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "consultancy.settings.production")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "starter.settings.production")
 else:
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "consultancy.settings.dev")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "starter.settings.dev")
 
 application = get_wsgi_application()
