@@ -9,7 +9,7 @@
 
 {% block content %}
 
-<div class="main-content">
+<div class="main-content mt-4">
     {% for block in page.content %}
       {% if block.block_type == 'richtext' and forloop.counter > 2 %}
         {% include_block block with class="pt-10" %}
