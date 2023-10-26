@@ -1,5 +1,4 @@
 {
-  "python.formatting.provider": "none",
   "editor.formatOnSave": true,
   "python.languageServer": "Pylance",
   "editor.codeActionsOnSave": {
@@ -17,5 +16,5 @@
   },
   "files.associations": {
     "*.html": "django-html"
-  }
+  },
 }
