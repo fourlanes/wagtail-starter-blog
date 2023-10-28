@@ -14,7 +14,7 @@ AUTHOR_CHOICES = (
 
 
 @register_snippet
-class Author(index.Indexed, models.Model):
+class Author(index.Indexed, models.Model):  # FIXME: use more generic Person class
     class Meta:
         verbose_name = "Author"
         ordering = ["author_name"]

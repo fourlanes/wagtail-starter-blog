@@ -9,20 +9,14 @@ from taggit.models import TagBase, TaggedItemBase
 
 from wagtail.models import Page
 from wagtail.admin.panels import FieldPanel
-from wagtail.snippets.models import register_snippet
 
 from common.mixins import ContactUsFooterMixin, CustomMetadataPageMixin
 from common.utils import ContactUsFooterPanels, ForeignKeyField, WagtailImageField
 from blog.blocks import content_streamfield
 
 
-@register_snippet
 class ArticleTopic(TagBase):
     free_tagging = False
-
-    panels = [
-        FieldPanel("name"),
-    ]
 
     class Meta:
         verbose_name = "Article Topic"
