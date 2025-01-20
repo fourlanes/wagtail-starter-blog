@@ -1,0 +1,31 @@
+{% load wagtailcore_tags %}
+
+<section id="blog">
+  <div class="container">
+      <div class="section-titler">
+          <div class="row">
+              <div class="col-md-10">
+                  <h2 class="line-bottom mt-0"><span class="text-theme-colored font-weight-600">{{self.heading}}</span></h2>
+              </div>
+          </div>
+      </div>
+      <div class="section-content">
+          <div class="row">
+
+              {% for item in self.work_articles %}
+                {% cycle 'left' 'right' as orientation silent %}
+                {% include 'cms/partials/article-card.html' with orientation=orientation %}
+              {% endfor %}
+
+
+              {% if self.work_topic %}
+                {% with self.work_articles|first as first_article %}
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center mb-0">
+                  <a href="{% pageurl first_article.get_parent %}?topic={{self.work_topic}}" class="font-20 text-theme-colored font-weight-700">{{self.show_more_caption|default:"See more work"}}</a>
+                </div>
+                {% endwith %}
+              {% endif %}
+          </div>
+      </div>
+  </div>
+</section>
