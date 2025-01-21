@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+
+{% block content %}
+
+<div class="main-content">
+
+  <section class="hero inner-header divider">
+    <div class="container pt-50 pb-50">
+        <div class="section-content pt-100">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="font-50 text-theme-colored">{{page.title}}</h1>
+                    {% if topics %}
+                      <div class="widget">
+                        <div class="tags">
+                          {% for topic in topics %}
+                            <a href="{% pageurl self %}?topic={{topic.slug}}">{{topic}}</a>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="container">
+      <div class="section-content">
+        <div class="row">
+
+          {% for item in page.get_children.specific %}
+            {% cycle 'left' 'right' as orientation silent %}
+            {% include 'cms/partials/work/article-card.html' with orientation=orientation %}
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="col-sm-12 col-md-12 col-lg-12 mb-50">
+  <div class="schedule-box maxwidth500 clearfix mb-30">
+      {% if orientation == 'left' %}
+        {% include 'cms/partials/article-card-photo.html' %}
+        {% include 'cms/partials/article-card-content.html' %}
+      {% else %}
+        {% include 'cms/partials/article-card-content.html' %}
+        {% include 'cms/partials/article-card-photo.html' %}
+      {% endif %}
+  </div>
+</div>

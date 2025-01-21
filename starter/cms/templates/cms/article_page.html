@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+
+{% block content %}
+
+<div class="main-content">
+    <section class="hero inner-header divider">
+      <div class="container pt-50 pb-50">
+          <div class="section-content pt-50">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h1 class="font-50 text-theme-colored">{{page.title}}</h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container mt-10 mb-30 pt-10 pb-30">
+          <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                  <div class="blog-posts single-post">
+                      {% include 'cms/partials/author_and_tags.html' with class="mb-20" %}
+
+                      <article class="post clearfix mb-0">
+                        {% for block in page.content %}
+                          {% include_block block %}
+                        {% endfor %}
+                      </article>
+
+                      {% include 'cms/partials/author_and_tags.html' with class="mt-20" %}
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+</div>
+
+{% endblock content %}
