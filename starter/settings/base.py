@@ -26,6 +26,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
+    "starter.accounts",
     "starter.cms",
     "starter.search",
     "wagtail.contrib.forms",
@@ -95,6 +96,8 @@ WSGI_APPLICATION = "starter.wsgi.application"
 
 DATABASES = {"default": dj_database_url.config(default=config("DATABASE_URL"))}
 
+
+AUTH_USER_MODEL = "accounts.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
