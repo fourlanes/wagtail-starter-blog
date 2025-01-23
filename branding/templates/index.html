@@ -1,0 +1,37 @@
+{% extends 'layouts/branding.html' %}
+
+{# --------------------------------------- #}
+{# Settings, models, library variables #}
+{# --------------------------------------- #}
+
+{% set ui_title = "Branding library" %}
+
+{% block ui_description %}
+	<p>{{ global.client_name }}</p>
+{% endblock %}
+
+{# --------------------------------------- #}
+{# UI Sub–nav options #}
+{# --------------------------------------- #}
+
+{% block ui_nav %}{% endblock %}
+
+{# --------------------------------------- #}
+{# Main body content #}
+{# --------------------------------------- #}
+
+{% block body %}
+<div class="">
+	<div class="">
+    <div class="fs-3 mb-3">Page templates</div>
+    <ul class="">
+      {% for item in pages %}
+      <li class="">
+        <a href="{{ page.url }}/page-templates/{{ item.name }}">{{ item.name }} - <span class="text-capitalize">{{item.stage}}</span></a>
+      </li>
+      {% endfor %}
+		</ul>
+	</div>
+</div>
+
+{% endblock %}
