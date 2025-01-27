@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-GB" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}{% if template_id %}T{{ template_id }} {{ template_name }}{% else %}{{ global.site_name }}{% endif %}{% endblock %}</title>
+  {% block html_header %}
+    {% include 'partials/scaffold/header-assets.html' %}
+  {% endblock %}
+</head>
+<body class="{% block body_class %}body{% endblock %}">
+	<div class="container mt-4">
+		<div class="ui-wrapper">
+			{% block header %}
+        {% include 'partials/scaffold/header.html' %}
+			{% endblock %}
+
+			<!-- ID and -nofocus required for proper skiplink operation -->
+			<main id="pagecontent" class="content" role="main" tabindex="-1">
+				{% block body %}{% endblock %}
+			</main>
+
+			{% block footer %}
+        {% include 'partials/scaffold/footer.html' %}
+			{% endblock %}
+		</div>
+	</div>
+	{% block html_footer %}
+		{% include 'partials/scaffold/footer-assets.html' %}
+	{% endblock %}
+</body>
+</html>
