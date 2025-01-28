@@ -36,6 +36,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svg-sprite": "^2.0.3",
     "gulp-uglify": "^3.0.2",
+    "modernizr": "^3.13.1",
     "nunjucks-includeData": "0.0.9",
     "rollup": "^4.31.0",
     "rollup-stream": "^1.24.1",

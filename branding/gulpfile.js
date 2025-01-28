@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 // import gulpSass from 'gulp-sass';
+import modernizr from 'modernizr';
 import autoprefixer from 'gulp-autoprefixer';
 import sassGlob from 'gulp-sass-glob';
 // import glob from 'glob';
@@ -80,6 +81,21 @@ gulp.task('scss', function (done) {
 
 // Copy javascript
 gulp.task('js', rollupJS());
+
+gulp.task('modernizr', function (done) {
+  modernizr.build(
+    {
+      // Add your Modernizr options here
+      options: ['setClasses', 'addTest', 'testProp'],
+      // Optionally add feature tests
+      'feature-detects': ['touchevents', 'history'],
+    },
+    function (result) {
+      fs.writeFileSync('assets/js/libs/modernizr.js', result);
+      done();
+    },
+  );
+});
 
 // Assets copy
 gulp.task('assets', function (done) {
@@ -216,12 +232,15 @@ gulp.task('browser-sync', function (done) {
 
 // Spins up a sever to render test templates
 // gulp.task("serve", ["watch-all", "browser-sync"])
-gulp.task('serve', gulp.series('cleanup', 'scss', 'js', 'assets', 'render', 'cname', 'browser-sync', 'watch-all'));
+gulp.task(
+  'serve',
+  gulp.series('cleanup', 'scss', 'js', 'modernizr', 'assets', 'render', 'cname', 'browser-sync', 'watch-all'),
+);
 
 // Run a build
 gulp.task(
   'build',
-  gulp.series('cleanup', 'scss', 'js', 'icons', 'iconsprite', 'favicons', 'assets', 'render', 'cname'),
+  gulp.series('cleanup', 'scss', 'js', 'icons', 'iconsprite', 'favicons', 'modernizr', 'assets', 'render', 'cname'),
 );
 
 // Icon Build
