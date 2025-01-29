@@ -98,35 +98,30 @@ gulp.task('modernizr', function (done) {
 });
 
 // Assets copy
-gulp.task('assets', function (done) {
-  gulp.src(['assets/**/*', '!assets/scss/**/*']).pipe(plumber()).pipe(gulp.dest('public/assets/'));
-  done();
+gulp.task('assets', function () {
+  return gulp.src(['assets/**/*', '!assets/scss/**/*']).pipe(plumber()).pipe(gulp.dest('public/assets/'));
 });
 
 // Copy Icons
-gulp.task('icons', function (done) {
-  gulp.src('assets/icons/**/*').pipe(plumber()).pipe(gulp.dest('public/assets/icons/'));
-  done();
+gulp.task('icons', function () {
+  return gulp.src('assets/icons/**/*').pipe(plumber()).pipe(gulp.dest('public/assets/icons/'));
 });
 
 // Copy Icons
-gulp.task('iconsprite', function (done) {
-  gulp.src('assets/svg/icons/renders/*').pipe(plumber()).pipe(gulp.dest('public/assets/svg/icons/renders'));
-  done();
+gulp.task('iconsprite', function () {
+  return gulp.src('assets/svg/icons/renders/*').pipe(plumber()).pipe(gulp.dest('public/assets/svg/icons/renders'));
 });
 
 // Copy CNAME
-gulp.task('cname', function (done) {
-  gulp
+gulp.task('cname', function () {
+  return gulp
     .src(['./cname/CNAME']) // Source file
     .pipe(gulp.dest('./public')); // Output
-  done();
 });
 
 // Copy Favicon
-gulp.task('favicons', function (done) {
-  gulp.src('assets/favicons/**/*').pipe(plumber()).pipe(gulp.dest('public/assets/favicons/'));
-  done();
+gulp.task('favicons', function () {
+  return gulp.src('assets/favicons/**/*').pipe(plumber()).pipe(gulp.dest('public/assets/favicons/'));
 });
 
 // Delete folders
