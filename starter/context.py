@@ -3,7 +3,7 @@ from django.conf import settings
 
 from wagtail.models import Site
 
-from home.models import HomePage
+from starter.cms.models import HomePage
 
 
 def get_current_page(request):

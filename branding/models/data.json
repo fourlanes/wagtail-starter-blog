@@ -1,0 +1,35 @@
+{
+  "global": {
+    "site_name": "Starter Blog Branding Library",
+    "site_root": "/",
+    "assets_root": "/assets",
+    "client_name": "Starter Blog",
+    "browser_choice": "Google chrome",
+    "browser_choice_url": "https://www.google.co.uk/intl/en_uk/chrome/browser/",
+    "last_tested_date": "Blank",
+    "functional_spec_link": "Blank",
+    "spreadsheet_link": "Blank",
+    "show_style_guide": false,
+    "show_modules": false,
+    "show_developer_guide": true,
+    "pages_style_guide": [
+      { "name": "Alerts", "url": "alerts" },
+      { "name": "Buttons", "url": "buttons" },
+      { "name": "Colour", "url": "colour" },
+      { "name": "Icons", "url": "/assets/svg/icons/renders/sprite.symbol.html" },
+      { "name": "Images", "url": "images" },
+      { "name": "Typography", "url": "typography" }
+    ],
+    "pages_modules": [],
+    "pages_developer_guide": [
+      { "name": "Bems Syntax", "url": "bems" },
+      { "name": "Forms", "url": "forms" }
+    ]
+  },
+  "pages": [
+    {
+      "name": "00-home",
+      "stage": "pending"
+    }
+  ]
+}
