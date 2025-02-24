@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-roboto: 'Roboto', sans-serif;
+  --font-roboto: 'Roboto';
+  --font-fira-mono: 'Fira Mono';
   --font-atkinson: 'Atkinson Hyperlegible Next';
 }

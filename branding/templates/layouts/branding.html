@@ -7,8 +7,7 @@
     {% block html_header %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700|Fira+Mono' rel='stylesheet' type='text/css'> -->
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700|Fira+Mono|Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap' rel='stylesheet' type='text/css'>
 		<link href="{{ global.assets_root }}/css/ui.css" rel="stylesheet">
     <link href="{{ global.assets_root }}/css/styles.min.css" rel="stylesheet">
     {% include 'partials/scaffold/header-assets.html' %}
@@ -35,13 +34,13 @@
 			<main id="pagecontent" class="content" role="main" tabindex="-1">
 				<div class="">
 					<div class="">
-						<h2 class="fs-3">{{ ui_title}}</h2>
-						<div class="fs-5">
+						<h2 class="text-2xl mb-2">{{ ui_title}}</h2>
+						<div class="font-bold mb-3">
 							{% block ui_description %}{% endblock %}
 						</div>
 					</div>
 				</div>
-				<div class="alert alert-info">
+				<div class="px-6 py-3 border border-solid rounded-md mb-4 text-sky-950 bg-sky-100">
 					During design and development phases, this guide is best viewed in <a href="{{ global.browser_choice_url }}" title="{{ global.browser_choice }}">{{ global.browser_choice }}</a> as it is still a working document.
 				</div>
 
