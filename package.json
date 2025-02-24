@@ -55,6 +55,7 @@
     "gulp-rename": "^2.0.0",
     "html-webpack-plugin": "^5.6.3",
     "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "source-map-loader": "^5.0.0",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.2",

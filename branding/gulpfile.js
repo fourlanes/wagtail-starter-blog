@@ -3,6 +3,7 @@ import gulp from 'gulp';
 import modernizr from 'modernizr';
 import autoprefixer from 'gulp-autoprefixer';
 import sassGlob from 'gulp-sass-glob';
+// import cleanCSS from 'gulp-clean-css';
 // import glob from 'glob';
 import { deleteAsync as del } from 'del';
 import nunjucksRender from 'gulp-nunjucks-render';
@@ -11,7 +12,7 @@ import plumber from 'gulp-plumber';
 import svgSprite from 'gulp-svg-sprite';
 import prettyUrl from 'gulp-pretty-url';
 import data from 'gulp-data';
-// import rename from 'gulp-rename';
+import rename from 'gulp-rename';
 // import uglify from 'gulp-uglify';
 // import filelist from 'gulp-filelist';
 import { rollup } from 'rollup';
@@ -75,6 +76,16 @@ gulp.task('scss', function (done) {
       }),
     )
     .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('public/assets/css/'));
+  done();
+});
+
+gulp.task('tailwind', function (done) {
+  gulp
+    .src('assets/css/styles.css')
+    .pipe(plumber())
+    // .pipe(cleanCSS())
+    .pipe(rename('styles.min.css'))
     .pipe(gulp.dest('public/assets/css/'));
   done();
 });
@@ -204,6 +215,7 @@ gulp.task('render', function (done) {
 gulp.task('watch-all', function () {
   gulp.watch('assets/js/**/*', gulp.series('js'));
   gulp.watch(['templates/**/*', 'models/**/*'], gulp.series('render'));
+  gulp.watch('assets/css/**/*', gulp.series('tailwind'));
   gulp.watch('assets/scss/**/*', gulp.series('scss'));
   gulp.watch('assets/icons/**/*', gulp.series('icons'));
   gulp.watch('assets/favicons/*', gulp.series('favicons'));
@@ -238,13 +250,36 @@ gulp.task('browser-sync', function (done) {
 // gulp.task("serve", ["watch-all", "browser-sync"])
 gulp.task(
   'serve',
-  gulp.series('cleanup', 'scss', 'js', 'modernizr', 'assets', 'render', 'cname', 'browser-sync', 'watch-all'),
+  gulp.series(
+    'cleanup',
+    'scss',
+    'tailwind',
+    'js',
+    'modernizr',
+    'assets',
+    'render',
+    'cname',
+    'browser-sync',
+    'watch-all',
+  ),
 );
 
 // Run a build
 gulp.task(
   'build',
-  gulp.series('cleanup', 'scss', 'js', 'icons', 'iconsprite', 'favicons', 'modernizr', 'assets', 'render', 'cname'),
+  gulp.series(
+    'cleanup',
+    'scss',
+    'tailwind',
+    'js',
+    'icons',
+    'iconsprite',
+    'favicons',
+    'modernizr',
+    'assets',
+    'render',
+    'cname',
+  ),
 );
 
 // Icon Build

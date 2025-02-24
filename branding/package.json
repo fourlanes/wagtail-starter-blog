@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "gulp serve",
-    "build": "gulp build"
+    "build": "gulp build",
+    "tailwind": "npx @tailwindcss/cli -i ./assets/css/tailwind.css -o ./assets/css/styles.css --watch"
   },
   "type": "module",
   "keywords": [],
@@ -24,6 +25,7 @@
     "del": "^8.0.0",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-data": "^1.3.1",
     "gulp-debug": "^5.0.1",
     "gulp-filelist": "^2.0.5",
@@ -46,9 +48,11 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.0.8",
     "autocompleter": "^9.3.2",
     "d3": "^7.9.0",
-    "gulp-pretty-url": "^0.1.1"
+    "gulp-pretty-url": "^0.1.1",
+    "tailwindcss": "^4.0.8"
   },
   "browserslist": [
     "last 1 version",
