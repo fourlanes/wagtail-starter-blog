@@ -5,7 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{% block title %}{{ global.site_name }}{% endblock %}</title>
     {% block html_header %}
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700|Fira+Mono' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700|Fira+Mono' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 		<link href="{{ global.assets_root }}/css/ui.css" rel="stylesheet">
     <link href="{{ global.assets_root }}/css/styles.min.css" rel="stylesheet">
     {% include 'partials/scaffold/header-assets.html' %}
@@ -13,11 +16,11 @@
 		<script>hljs.initHighlightingOnLoad();</script>
     {% endblock %}
 </head>
-<body class="relative {% block body_class %}body{% endblock %}">
+<body class="font-atkinson {% block body_class %}body{% endblock %}">
 	<div class="container mx-auto my-6 w-full">
 		<div class="ui-wrapper">
 			{% block header %}
-			<header role="banner" class="pb-3 mb-4 border-solid border-b-2">
+			<header role="banner" class="pb-3 mb-4 border-solid border-b-2 font-semibold">
 				<div class="">
 					<h1 class="text-3xl"><a href="/">{{ global.client_name }} Branding Library {{ page.title }}</a></h1>
 				</div>
