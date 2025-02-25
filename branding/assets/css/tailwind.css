@@ -5,3 +5,9 @@
   --font-fira-mono: 'Fira Mono';
   --font-atkinson: 'Atkinson Hyperlegible Next';
 }
+
+@layer components {
+  .list-group {
+    @apply rounded-lg border border-gray-200 bg-white shadow-sm;
+  }
+}
